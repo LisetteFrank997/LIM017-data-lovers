@@ -15,7 +15,10 @@ const backTarget= document.createElement('div');
 
 poster.src = showMovies(data.films[i].poster);
 
-backTarget.textContent = showMovies(data.films[i].description);
+let sinopsis = showMovies(data.films[i].description);
+let titulo = showMovies(data.films[i].title);
+
+backTarget.innerHTML = titulo + '<br>' + sinopsis;
 
 targetBox.classList.add('target-box');
 target.classList.add('target');
