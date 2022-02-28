@@ -4,7 +4,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
+.titleFilm{
+  font-weight: bold;
+  transform: rotateY(180deg);
+  text-align: center;
+  backface-visibility: hidden;
+}
 .target-box {
     margin: auto;
     width: 300px;

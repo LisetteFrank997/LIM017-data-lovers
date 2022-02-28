@@ -12,14 +12,17 @@ const target = document.createElement('div');
 const faceTarget = document.createElement('div');
 const poster = document.createElement('img');
 const backTarget= document.createElement('div');
+const title = document.createElement('div');
 
 poster.src = showMovies(data.films[i].poster);
 
 let sinopsis = showMovies(data.films[i].description);
 let titulo = showMovies(data.films[i].title);
+title.textContent = titulo;
 
-backTarget.innerHTML = titulo + '<br>' + sinopsis;
+backTarget.innerHTML = sinopsis;
 
+title.classList.add('titleFilm');
 targetBox.classList.add('target-box');
 target.classList.add('target');
 faceTarget.classList.add('faceTarget');
@@ -33,7 +36,7 @@ target.insertAdjacentElement('afterbegin',backTarget);
 target.insertAdjacentElement('afterbegin',faceTarget);
 
 faceTarget.insertAdjacentElement('afterbegin',poster);
-
+backTarget.insertAdjacentElement('beforebegin',title);
 
 
 i++;
