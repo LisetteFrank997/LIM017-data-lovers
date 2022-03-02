@@ -1,3 +1,109 @@
-h1 {
-    color: purple;
+main{
+  background-color: white;
 }
+
+#root{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+}
+body{
+  margin: 0;
+}
+main{
+  
+  background-image: url(img/fondo8.jpg);
+  height: 1000px;
+ 
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+}
+section{
+  
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ul{
+  color: white;
+}
+header{
+  display: flex;
+}
+h1{
+  color: white;
+  font-size: 60px;
+  font-family: 'Abhaya Libre';
+  z-index: 1;
+}
+button{
+  margin-left: 700px;
+  height: 40px;
+  border: 0;
+  background-color:#6591A7 ;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  width: 200px;
+  
+}
+li{
+  font-size: 30px;
+  font-family: 'Abhaya Libre';
+}
+nav{
+  
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-right: 600px;
+}
+.visible{
+  display: initial;
+}
+.invisible{
+  display: none;
+}
+.titleFilm{
+  font-weight: bold;
+  transform: rotateY(180deg);
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.target-box {
+    margin: 10px;
+    width: 300px;
+    height: 350px;
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .target-box:hover .target {
+      transform: rotateY(180deg);
+      
+  }
+  
+  .target {
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+  }
+  
+  .faceTarget {
+    position: absolute;
+    backface-visibility: hidden;
+
+  }
+  
+  .backTarget {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    background-color: #a5d875;
+    
+  }
+  .poster{
+    width:300px;
+  height: 350px;
+  }
