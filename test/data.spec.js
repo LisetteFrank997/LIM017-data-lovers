@@ -1,16 +1,12 @@
-import { example, anotherExample } from '../src/data.js';
+import {sortAZFilms, anotherExample } from '../src/data.js';
 
 
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
-  });
-
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+describe('sortAZFilms', () => {
+  
+  it('debería retornar un array de objetos de peliculas ordenados', () => {
+    expect(sortAZFilms()).toBe('example');
   });
 });
-
 
 describe('anotherExample', () => {
   it('is a function', () => {

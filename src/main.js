@@ -1,4 +1,4 @@
-import {showMovies } from './data.js';
+import {sortAZFilms } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -15,19 +15,22 @@ function showFilms(films){
     const poster = document.createElement('img');
     const backTarget= document.createElement('div');
     const title = document.createElement('div');
+    const window = document.createElement('img');
+    poster.src = films[i].poster;
     
-    poster.src = showMovies(films[i].poster);
-    
-    let sinopsis = showMovies(films[i].description);
-    let titulo = showMovies(films[i].title);
+    let sinopsis = films[i].description;
+    let titulo = films[i].title;
     title.textContent = titulo;
+    window.src = 'img/Recurso 9.svg';
 
     title.classList.add('titleFilm');
     
     backTarget.innerHTML = titulo + '<br>' + sinopsis;
    
     targetBox.classList.add('target-box');
+    
     target.classList.add('target');
+    window.classList.add('window');
     faceTarget.classList.add('faceTarget');
     backTarget.classList.add('backTarget');
     poster.classList.add('poster');
@@ -35,6 +38,7 @@ function showFilms(films){
     document.getElementById('root').appendChild(box);
     box.insertAdjacentElement('beforeend',targetBox);
     targetBox.insertAdjacentElement('afterbegin',target);
+    targetBox.insertAdjacentElement('afterbegin',window);
     
     target.insertAdjacentElement('afterbegin',backTarget);
     target.insertAdjacentElement('afterbegin',faceTarget);
@@ -49,21 +53,18 @@ function showFilms(films){
 }
 let container=showFilms(data.films);
 
+let cont=0;
 const sortTitle = document.getElementById('alfabeticamente');
-let cont = 0;
-
 sortTitle.addEventListener('click',()=>{
-    
-    let sortFilms = data.films;
     if(cont==0)
     {
-        sortFilms=sortFilms.sort((a, b) => (a.title > b.title) ? 1 : -1);
-        showFilms(sortFilms);
-        container.classList.add('invisible');
+        container.style.display='none';
+        let Films = sortAZFilms(data,container);
+        showFilms(Films);
     }
     cont++;
-
 })
+
 
 
 
