@@ -34,34 +34,21 @@ header{
 }
 h1{
   color: white;
-  font-size: 60px;
+  font-size: 80px;
   font-family: 'Abhaya Libre';
   z-index: 1;
-}
-button{
-  margin-left: 700px;
-  height: 40px;
-  border: 0;
-  background-color:#6591A7 ;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  width: 200px;
-  
+  position:relative;
+  top: 150px; right: 60px;
 }
 li{
   font-size: 30px;
   font-family: 'Abhaya Libre';
 }
 nav{
-  
   display: flex;
   justify-content: center;
   margin-top: 100px;
   margin-right: 600px;
-}
-.visible{
-  display: initial;
 }
 .invisible{
   display: none;
@@ -107,3 +94,58 @@ nav{
     width:300px;
   height: 350px;
   }
+ 
+ 
+#choose{
+  margin: auto;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Abhaya Libre';
+}
+
+.buttonO {
+  display: flex;
+}
+li {
+  list-style: none;
+  position: relative;
+
+}
+
+.chooseT button{
+  text-decoration: none;
+  background-color:#6591A7 ;
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 16px;
+}  
+.chooseT button:hover{
+  background-color:#434343;
+  
+}
+.buttonO:hover{
+  background-color:#434343;
+  cursor: pointer;
+}
+
+button{
+  display: flex;
+  border: 0;
+  background-color:#6591A7 ;
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  width: 200px; 
+}
+
+#logo {
+  display: flex;
+  position: relative;
+  left: 420px;
+}
+
+
+
