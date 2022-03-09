@@ -9,9 +9,7 @@
   <body>
     
     <main>
-      
-      
-      <section>
+      <div id="landing">
         <header>
           <img id="logo" src="img/logoEsteSi.png" alt="logo">
           <h1>Studio Ghibli</h1>
@@ -27,15 +25,22 @@
          </ul>
         </nav>
         <img src="img/totoro2.png" alt="">
-      </section>
+      </div>
        
       <did id="choose"> 
         <div class="chooseT">
           <button id="buttonO" class="buttonO">Ordenar Películas</button>
-            <li><button id="moviesChoose">Ordenar de la A-Z</button></li>
-            <li><button id="movieScor">Ordenar por scor</button></li>
+            <li><button id="moviesChoose">Ordenar por titulo</button>
+                <ul class="AscDesc">
+                  <li><button>Ascendente (A-Z) </button></li>
+                  <li><button>Descendente (Z-A)</button></li>
+                </ul>
+            </li>
+            <li><button id="movieScore">Ordenar por score</button></li>
         </div>
       </did>  
+
+
 
     </main>
     <div id="root"></div>
