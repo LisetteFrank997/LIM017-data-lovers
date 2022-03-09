@@ -43,9 +43,7 @@ export const showFilms=(films)=>{
     target.insertAdjacentElement('afterbegin',faceTarget);
     
     faceTarget.insertAdjacentElement('afterbegin',poster);
-  
-    
-    
+
     i++;
     }
     return box;

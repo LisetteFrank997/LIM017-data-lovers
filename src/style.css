@@ -44,44 +44,8 @@ section{
   width: 100vw;
   height: auto;
 }
-#menu{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  background-color: red;
-  color: black;
-}
-.hide{
-  display: none;
-  
-}
-.subNav:hover .hide{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-.btnSort{
-  display: block;
-  border: none;
-  outline: none;
-  margin: 0;
-  width: 50%;
-  height: 30px;
-  
-}
 
-.btnTitle{
-  flex: 50%;
-  font-size: 16px;
-  color: rgb(36, 32, 32);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-.AscDesc > li{
-  float: left;
 
-}
 .invisible{
   display: none;
 }
