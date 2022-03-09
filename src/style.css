@@ -97,51 +97,6 @@ section{
   position: relative;
   
   }
- 
-#choose{
-  margin: auto;
-  width: 70px;
-  display: flex;
-  justify-content: center;
-  font-family: 'Abhaya Libre';
-}
-
-.buttonO {
-  display: flex;
-}
-li {
-  list-style: none;
-  position: relative;
-}
-
-.chooseT button{
-  text-decoration: none;
-  background-color:#6591A7 ;
-  color: white;
-  padding: 10px 15px;
-  font-weight: bold;
-  font-size: 16px;
-}  
-.chooseT button:hover{
-  background-color:#434343;
-  
-}
-.buttonO:hover{
-  background-color:#434343;
-  cursor: pointer;
-}
-
-button{
-  display: flex;
-  border: 0;
-  background-color:#6591A7 ;
-  color: white;
-  padding: 10px 15px;
-  font-weight: bold;
-  font-size: 16px;
-  width: 200px; 
-}
-
 #logo {
   display: flex;
   position: relative;
@@ -150,5 +105,51 @@ button{
 .window{
   position: absolute;
   width: 88%;
-  
+}
+
+#opcions {
+  margin:auto;
+  width:500px;
+  font-family:'Abhaya Libre';
+  display: flex;
+  justify-content: center;
+}
+ul, ol {
+  list-style:none;
+}
+
+.opcionSortBy > li {
+  float:left;
+}
+
+.opcionSortBy li button{
+  background-color:#6591A7;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+  border:0;
+}
+
+.opcionSortBy li button:hover {
+  background-color:#6eb459;
+}
+
+.opcionSortBy li ul {
+  display:none;
+  position:absolute;
+  min-width:140px;
+}
+
+.opcionSortBy li:hover > ul {
+  display:block;
+}
+
+.opcionSortBy li ul li {
+  position:relative;
+}
+
+.opcionSortBy li ul li ul {
+  right:-135px;
+  top:0px;
 }

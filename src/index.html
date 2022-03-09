@@ -29,12 +29,25 @@
         <img src="img/totoro2.png" alt="">
       </section>
        
-      <did id="choose"> 
-        <div class="chooseT">
-          <button id="buttonO" class="buttonO">Ordenar Películas</button>
-            <li><button id="moviesChoose">Ordenar de la A-Z</button></li>
-            <li><button id="movieScor">Ordenar por scor</button></li>
-        </div>
+      <did id='opcions'> 
+        <ul class='opcionSortBy'>
+          <li><button>Ordenar Películas</button>
+            <ul>
+              <li><button id="moviesChoose">Ordenar de la A-Z</button>
+                <ul>
+                 <li><button>A-Z</button></li>
+                 <li><button>Z-A</button></li>
+                </ul>
+              </li>
+              <li><button id="movieScor">Ordenar por scor</button>
+                <ul>
+                  <li><button>Del 0 al 100</button></li>
+                  <li><button>Del 100 al 0</button></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </did>  
 
     </main>
