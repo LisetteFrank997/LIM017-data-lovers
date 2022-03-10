@@ -1,4 +1,4 @@
-import {sortData } from './data.js';
+import {filterData, sortData } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 export const showFilms=(films)=>{
@@ -64,5 +64,6 @@ sortScore.addEventListener('click',()=>{
     showFilms(sortData(data,parseInt('rt_score'),'asc'));
 })
 
+showFilms(filterData(data,'gender'))
 
 

@@ -8,3 +8,10 @@ export const sortData=(data,sortBy,sortOrder)=>{
     return sortFilms.sort((a, b) => (a[sortBy] < b[sortBy] ? 1 : -1));
 }
 
+export const filterData=(data, condition)=>{
+  let caractersGender = data.films;
+  condition 
+    caractersGender= caractersGender.filter(a => a[condition] == "string");
+    return caractersGender;
+}
+

@@ -117,10 +117,8 @@ section{
 
 #opcions {
   margin:auto;
-  width:500px;
+  width:100px;
   font-family:'Abhaya Libre';
-  display: flex;
-  justify-content: center;
 }
 ul, ol {
   list-style:none;
@@ -134,7 +132,7 @@ ul, ol {
   background-color:#6591A7;
   color:#fff;
   text-decoration:none;
-  padding:10px 12px;
+  padding:5px 8px;
   display:block;
   border:0;
 }
@@ -146,7 +144,7 @@ ul, ol {
 .opcionSortBy li ul {
   display:none;
   position:absolute;
-  min-width:140px;
+  min-width:50px;
 }
 
 .opcionSortBy li:hover > ul {
@@ -158,11 +156,34 @@ ul, ol {
 }
 
 .opcionSortBy li ul li ul {
-  right:-135px;
+  right:-125px;
   top:0px;
-  width: 92%;
-  
+  width:100%;
 }
+#nav {
+  margin:auto;
+  width:350px;
+  font-family:'Abhaya Libre';
+}
+.items > li {
+  float:left;
+}
+.items li button {
+  background-color:#6591A7;
+  color:#fff;
+  text-decoration:none;
+  padding:5px 8px;
+  font-size: 16px;
+  display:block;
+  border:0;
+}
+.items li button:hover {
+  background-color:#6eb459;
+}
+
+
+
+
 @media only screen and (min-width: 768px){
  
   .target-box{
@@ -184,4 +205,28 @@ ul, ol {
   .backTarget{
     height: 20vw;
   }
+  #opcions {
+    margin:auto;
+    width:500px;
+  }
+  .opcionSortBy li button{
+    padding:10px 12px;
+  }
+  .opcionSortBy li ul {
+    min-width:140px;
+  } 
+  .opcionSortBy li ul li ul {
+    right:-135px;
+    top:0px;
+    width: 92%;
+  }
+  #nav {
+    margin:auto;
+    width:800px;
+  }
+  .items li button {
+    padding:10px 12px;
+    font-size: 40px;
+  }
+  
 }
