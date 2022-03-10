@@ -1,10 +1,11 @@
-import {sortData } from './data.js';
+import {sortData, filterData} from './data.js';
 
 import data from './data/ghibli/ghibli.js';
-export const showFilms=(films)=>{
+//let data2 = {...data};
+export const show=(films,img,back1,back2)=>{
     let i=0;
     const box = document.createElement('section'); 
-  
+    box.classList.add('container')
     while(i<films.length)
     {
      
@@ -15,16 +16,17 @@ export const showFilms=(films)=>{
     const backTarget= document.createElement('div');
     const title = document.createElement('div');
     const window = document.createElement('img');
-    poster.src = films[i].poster;
     
-    let release_date = films[i].release_date;
-    let titulo = films[i].title;
+    poster.src = films[i][img];
+    
+    let description = films[i][back1];
+    let titulo = films[i][back2];
     title.textContent = titulo;
     window.src = 'img/pink.svg';
   
     title.classList.add('titleFilm');
     
-    backTarget.innerHTML = titulo + '<br>' + release_date;
+    backTarget.innerHTML = titulo + '<br>' + 'score: ' + description;
    
     targetBox.classList.add('target-box');
     
@@ -49,20 +51,37 @@ export const showFilms=(films)=>{
     return box;
   }
 
-
-const sortTitle = document.getElementById('moviesChoose');
 const divRoot = document.getElementById('root');
-sortTitle.addEventListener('click',()=>{
+const sortTitleAsc = document.getElementById('moviesChooseAsc');
+
+sortTitleAsc.addEventListener('click',()=>{
    divRoot.innerHTML = '';
-   showFilms(sortData(data,'title','asc'));
+   show(sortData(data,'title','asc'),'poster','description','title');
 })
 
-const sortScore = document.getElementById('movieScor');
-sortScore.addEventListener('click',()=>{
+const sortScoreAsc = document.getElementById('movieScoreAsc');
+sortScoreAsc.addEventListener('click',()=>{
 
     divRoot.innerHTML = '';
-    showFilms(sortData(data,parseInt('rt_score'),'asc'));
+    show(sortData(data,parseInt('rt_score'),'asc'));
+})
+
+const sortTitleDesc = document.getElementById('moviesChooseDesc');
+
+sortTitleDesc.addEventListener('click',()=>{
+   divRoot.innerHTML = '';
+   show(sortData(data,'title','desc'),'poster','description','title');
+})
+
+const sortScoreDesc = document.getElementById('movieScoreDesc');
+sortScoreDesc.addEventListener('click',()=>{
+
+    divRoot.innerHTML = '';
+    show(sortData(data,parseInt('rt_score'),'desc'),'poster','description','title');
 })
 
 
-
+let filtrar = document.getElementById('filtrar');
+filtrar.addEventListener('click',()=>{
+    show(filterData(data,'Female'),'img','name','gender')
+})
