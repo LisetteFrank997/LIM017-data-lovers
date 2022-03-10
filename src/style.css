@@ -8,36 +8,78 @@ body{
   overflow-x: hidden;
 }
 main{
-  
-  background-image: url(img/fondo8.jpg);
-  height: 1000px;
  
+  background-image: url(img/mobile.jpg);
   background-repeat: no-repeat;
-  background-size: 100vw 100vh;
   background-attachment: fixed;
+  height: 50vh;
+  background-size: 100vw 50vh;
+  /*position: absolute;*/
+  
 }
-
+#neblina{
+  display: grid;
+  grid-template-areas: " home .   . "
+                      ".  logo ."
+                    ".  descripcion . "
+                    ".  opciones .";
+  grid-template-rows: 10% 30% 20% 40%;
+  grid-template-columns: 20% 60% 20% ;
+  background: linear-gradient(180deg, rgba(29, 151, 215, 0.79) 0%, rgba(29, 151, 215, 0) 100%);
+  margin: 1%;
+  height: 50vh;
+  
+  border-radius: 3%;
+  border: 5px #6591A7;
+  position: relative;
+  top: 1%;
+  padding: 5%;
+}
 ul{
   color: white;
 }
 header{
+  grid-area: logo;
   display: flex;
+  justify-content: center;
+}
+
+#descripcion{
+  grid-area: descripcion;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#homeIcon{
+  grid-area: home;
+  width: 44%;
+}
+
+#opcions{
+  grid-area: opciones;
+}
+
+nav{
+  grid-area: opciones;
 }
 h1{
   color: white;
   font-size: 33px;
   font-family: 'Abhaya Libre';
-  z-index: 1;
-  position:relative;
-  top: 31px; right: 15px;
+  
+  background-image: url(img/logoEsteSi.png);
+  
+  
 }
 li{
-  font-size: 30px;
+  font-size: 18px;
   font-family: 'Abhaya Libre';
 }
 
 
-section{   
+.container{   
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -91,9 +133,9 @@ section{
   .backTarget {
     transform: rotateY(180deg);
     backface-visibility: hidden;
-    background-color: #a5d875;
+    background-color: #cecece;
     width:100%;
-   
+   overflow: scroll;
     
   }
   .poster{
@@ -104,9 +146,7 @@ section{
   }
  
 #logo {
-  display: flex;
-  position: relative;
-  left: 27px;
+
   width: 30vw;
   height: 84px;
 }
@@ -203,7 +243,15 @@ ul, ol {
     top: 150px; right: 60px;
   }
   .backTarget{
-    height: 20vw;
+    height: 100%;
+  }
+  main{
+  
+    background-image: url(img/fondo9.jpg);
+    background-size: 100vw 100vh;
+    height: 100vh;
+
+  
   }
   #opcions {
     margin:auto;
