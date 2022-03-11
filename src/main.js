@@ -81,6 +81,7 @@ sortScoreDesc.addEventListener('click',()=>{
 })
 
 
+
 let filtrar = document.getElementById('filtrar');
 filtrar.addEventListener('click',()=>{
     show(filterData(data,'Female'),'img','name','gender')

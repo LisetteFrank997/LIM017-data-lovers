@@ -21,6 +21,37 @@
           descripcion
         </div>
 
+        <div id='nav'>
+         <ul class='items'>
+           <li><button>Home</button></li>
+           <li><button>Películas</button></li>
+           <li><button>Personajes</button></li>
+           <li><button>Estadisticas</button></li>
+         </ul>
+        </div>
+      </div>
+       
+      <did id='opcions'> 
+        <ul class='opcionSortBy'>
+          <li><button>Ordenar Películas</button>
+            <ul>
+              <li><button id="moviesChoose">De la A-Z</button>
+                <ul>
+                 <li><button>A-Z</button></li>
+                 <li><button>Z-A</button></li>
+                </ul>
+              </li>
+              <li><button id="movieScor">Por popularidad</button>
+                <ul>
+                  <li><button>+populares</button></li>
+                  <li><button>-populares</button></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </did>  
+        
     </main>
     <div id="root"></div>
     <script src="main.js" type="module"></script>
