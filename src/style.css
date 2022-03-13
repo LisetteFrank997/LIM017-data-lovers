@@ -9,7 +9,7 @@ body{
 }
 main{
  
-  background-image: url(img/mobile.jpg);
+  background-image: url(img/fondo10.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 50vh;
@@ -22,17 +22,19 @@ main{
   grid-template-areas: " home .   . "
                       ".  logo ."
                     ".  descripcion . "
-                    ".  opciones .";
-  grid-template-rows: 10% 30% 20% 40%;
+                    "nav nav nav"
+                    "opciones . .";
+  grid-template-rows: 10% 30% 18% 30%;
   grid-template-columns: 20% 60% 20% ;
-  background: linear-gradient(180deg, rgba(29, 151, 215, 0.79) 0%, rgba(29, 151, 215, 0) 100%);
-  margin: 1%;
+  background: linear-gradient(180deg, rgba(255, 239, 59, 1) 0%, rgba(29, 151, 215, 0) 100%);
+  margin-left: 3%;
+  margin-right: 3%;
   height: 50vh;
   
   border-radius: 3%;
   border: 5px #6591A7;
   position: relative;
-  top: 1%;
+  top: 3%;
   padding: 5%;
 }
 ul{
@@ -54,24 +56,15 @@ header{
 }
 #homeIcon{
   grid-area: home;
-  width: 44%;
+  width: 40%;
 }
 
-#opcions{
-  grid-area: opciones;
-}
 
-nav{
-  grid-area: opciones;
-}
 h1{
   color: white;
   font-size: 33px;
   font-family: 'Abhaya Libre';
-  
-  background-image: url(img/logoEsteSi.png);
-  
-  
+
 }
 li{
   font-size: 18px;
@@ -85,6 +78,7 @@ li{
   justify-content: center;
   width: 100vw;
   height: auto;
+  margin-top: 120px;
 }
 
 
@@ -155,20 +149,35 @@ li{
   width: 88%;
 }
 
-#opcions {
+#options {
+  
   margin:auto;
   width:100px;
   font-family:'Abhaya Libre';
+
+  position: relative;
+    top: 50vh;
+    left: -33vw;
+}
+#options2 {
+  
+  margin:auto;
+  width:100px;
+  font-family:'Abhaya Libre';
+
+  position: relative;
+    top: 50vh;
+    left: -33vw;
 }
 ul, ol {
   list-style:none;
 }
 
-.opcionSortBy > li {
+.optionBy > li {
   float:left;
 }
 
-.opcionSortBy li button{
+.optionBy li button{
   background-color:#6591A7;
   color:#fff;
   text-decoration:none;
@@ -177,30 +186,31 @@ ul, ol {
   border:0;
 }
 
-.opcionSortBy li button:hover {
+.optionBy li button:hover {
   background-color:#6eb459;
 }
 
-.opcionSortBy li ul {
+.optionBy li ul {
   display:none;
   position:absolute;
   min-width:50px;
 }
 
-.opcionSortBy li:hover > ul {
+.optionBy li:hover > ul {
   display:block;
 }
 
-.opcionSortBy li ul li {
+.optionBy li ul li {
   position:relative;
 }
 
-.opcionSortBy li ul li ul {
+.optionBy li ul li ul {
   right:-125px;
   top:0px;
   width:100%;
 }
 #nav {
+  grid-area: nav;
   margin:auto;
   width:350px;
   font-family:'Abhaya Libre';
@@ -217,12 +227,10 @@ ul, ol {
   display:block;
   border:0;
 }
+
 .items li button:hover {
   background-color:#6eb459;
 }
-
-
-
 
 @media only screen and (min-width: 768px){
  
@@ -231,13 +239,13 @@ ul, ol {
     height: 38vh;
     margin: 9vh;
   }
-  #logo {
 
+  #logo {
     left: 420px;
     width: auto;
     height: auto;
-    
   }
+
   h1{
     font-size: 80px;
     top: 150px; right: 60px;
@@ -247,30 +255,41 @@ ul, ol {
   }
   main{
   
-    background-image: url(img/fondo9.jpg);
+    background-image: url(img/fondo10.jpg);
     background-size: 100vw 100vh;
     height: 100vh;
 
   
   }
-  #opcions {
+  #options {
     margin:auto;
     width:500px;
+    position: relative;
+    top: 761px;
+    left: -6vw;
   }
-  .opcionSortBy li button{
+  #options2 {
+    margin:auto;
+    width:500px;
+    position: relative;
+    top: 50vh;
+    left: -3vw;
+  }
+
+  .optionBy li button{
     padding:10px 12px;
   }
-  .opcionSortBy li ul {
+  .optionBy li ul {
     min-width:140px;
   } 
-  .opcionSortBy li ul li ul {
+  .optionBy li ul li ul {
     right:-135px;
     top:0px;
     width: 92%;
   }
   #nav {
     margin:auto;
-    width:800px;
+    width:700px;
   }
   .items li button {
     padding:10px 12px;
