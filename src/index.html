@@ -11,7 +11,7 @@
     <main>
       <div id="neblina">
         
-          <img id="homeIcon" src="img/home.png" alt="">
+          <img id="homeIcon" src="img/casa.png" alt="">
         
         <header>
           <img id="logo" src="img/logoTiny.png" alt="logo">
@@ -21,36 +21,58 @@
           descripcion
         </div>
 
-        <div id='nav'>
-         <ul class='items'>
-           <li><button>Home</button></li>
-           <li><button>Películas</button></li>
-           <li><button>Personajes</button></li>
-           <li><button>Estadisticas</button></li>
+        <div id="nav">
+         <ul class="items">
+          
+           <li><button id="btnFilm">Películas</button></li>
+           <li><button id="btnCharacter">Personajes</button></li>
+           <li><button id="btnCompute">Estadisticas</button></li>
          </ul>
         </div>
+        <did id="options"> 
+          <ul class="optionBy">
+            <li><button id="btnSort">Ordenar</button>
+              <ul>
+                <li><button id="btnSort1"></button>
+                  <ul>
+                   <li><button id="sub1BtnSort1"></button></li>
+                   <li><button id="sub2BtnSort1"></button></li>
+                  </ul>
+                </li>
+                <li><button id="btnSort2"></button>
+                  <ul>
+                    <li><button id="sub1BtnSort2"></button></li>
+                    <li><button id="sub2BtnSort2"></button></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </did>  
+        <did id="options2"> 
+          <ul class="optionBy">
+            <li><button id="btnFilter">Filtrar</button>
+              <ul>
+                <li><button id="btnFilter1"></button>
+                  <ul>
+                   <li><button id="sub1BtnFilter1"></button></li>
+                   <li><button id="sub2BtnFilter1"></button></li>
+                  </ul>
+                </li>
+                <li><button id="btnFilter2"></button>
+                  <ul>
+                    <li><button id="sub1BtnFilter2"></button></li>
+                    <li><button id="sub2BtnFilter2"></button></li>
+                    <li><button id="sub3BtnFilter2"></button></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </did>  
       </div>
        
-      <did id='opcions'> 
-        <ul class='opcionSortBy'>
-          <li><button>Ordenar Películas</button>
-            <ul>
-              <li><button id="moviesChoose">De la A-Z</button>
-                <ul>
-                 <li><button>A-Z</button></li>
-                 <li><button>Z-A</button></li>
-                </ul>
-              </li>
-              <li><button id="movieScor">Por popularidad</button>
-                <ul>
-                  <li><button>+populares</button></li>
-                  <li><button>-populares</button></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </did>  
+      
         
     </main>
     <div id="root"></div>
