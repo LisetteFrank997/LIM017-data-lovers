@@ -80,8 +80,6 @@ sortScoreDesc.addEventListener('click',()=>{
     show(sortData(data,parseInt('rt_score'),'desc'),'poster','description','title');
 })
 
-showFilms(filterData(data,'gender'))
-
 let filtrar = document.getElementById('filtrar');
 filtrar.addEventListener('click',()=>{
     show(filterData(data,'Female'),'img','name','gender')
