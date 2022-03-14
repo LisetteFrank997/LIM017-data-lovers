@@ -58,17 +58,19 @@ const options = document.getElementById('options');
 const btnSort1 = document.getElementById('btnSort1');
 const btnsortTitleAsc = document.getElementById('sub1BtnSort1');
 const btnsortTitleDesc = document.getElementById('sub2BtnSort1');
+const btnSort3 = document.getElementById('btnSort3');
+const btnsortDateAsc = document.getElementById('sub1BtnSort3')
+const btnsortDateDesc= document.getElementById('sub2BtnSort3')
 const btnSort2 = document.getElementById('btnSort2');
 const btnsortScoreAsc = document.getElementById('sub1BtnSort2');
 const btnsortScoreDesc = document.getElementById('sub2BtnSort2');
-const btnFilterDirector = document.getElementById('btnFilter1');
-
+const btnFilter1 = document.getElementById('btnFilter1');
 const btnFilterHayaoM = document.getElementById('sub1BtnFilter1');
-const btnFilterOthers = document.getElementById('sub2BtnFilter1');
-const btnFilterYear = document.getElementById('btnFilter2');
-const btnFilter80 = document.getElementById('sub1BtnFilter2');
+const btnFilterIsaoT = document.getElementById('sub2BtnFilter1');
+const btnFilter2 = document.getElementById('btnFilter2');
+/*const btnFilter80 = document.getElementById('sub1BtnFilter2');
 const btnFilter90 = document.getElementById('sub2BtnFilter2');
-const btnFilter00 = document.getElementById('sub3BtnFilter2')
+const btnFilter00 = document.getElementById('sub3BtnFilter2')*/
 
 btnFilm.addEventListener('click',()=>{
     divRoot.innerHTML = '';
@@ -77,18 +79,16 @@ btnFilm.addEventListener('click',()=>{
     btnSort1.innerText='Por titulos';
     btnsortTitleAsc.innerText = 'A-Z';
     btnsortTitleDesc.innerText = 'Z-A';
-    btnSort2.innerText = 'Por popularidad';
+    btnSort2.innerText = 'Popularidad';
     btnsortScoreAsc.innerText = '+ popular';
     btnsortScoreDesc.innerText = '- popular';
-    btnFilterDirector.innerText = 'Por director';
+    btnSort3.innerText = 'Por estreno';
+    btnsortDateAsc.innerText='Newer';
+    btnsortDateDesc.innerText='Older';
+    btnFilter1.innerText = 'Por director';
     btnFilterHayaoM.innerText = 'Hayao Miyazaki';
-    btnFilterOthers.innerText = 'Otros';
-    
-    btnFilterYear.innerText = 'Por año';
-    btnFilter80.innerText = '80s';
-    btnFilter90.innerText = '90s';
-    btnFilter00.innerText = '00s';
-
+    btnFilterIsaoT.innerText = 'Isao Takahata';
+   
 })
 
 
@@ -104,6 +104,18 @@ btnsortScoreAsc.addEventListener('click',()=>{
 
     divRoot.innerHTML = '';
     show(sortData(films,'rt_score','asc'),'poster','rt_score','title');
+})
+
+btnsortDateAsc.addEventListener('click',()=>{
+
+    divRoot.innerHTML = '';
+    show(sortData(films,'release_date','asc'),'poster','release_date','title');
+})
+
+btnsortDateDesc.addEventListener('click',()=>{
+
+    divRoot.innerHTML = '';
+    show(sortData(films,'release_date','desc'),'poster','release_date','title');
 })
 
 
@@ -123,26 +135,32 @@ btnsortScoreDesc.addEventListener('click',()=>{
 
 window.addEventListener("load",()=>{
     options.style.display = 'block';
+    btnFilter2.style.display= 'none';
     show(data.films,'poster','description','title');
     btnSort1.innerText='Por titulos';
     btnsortTitleAsc.innerText = 'A-Z';
     btnsortTitleDesc.innerText = 'Z-A';
-    btnSort2.innerText = 'Por popularidad';
+    btnSort2.innerText = 'Popularidad';
     btnsortScoreAsc.innerText = '+ popular';
-    btnsortScoreDesc.innerText = '- popular';
-    btnFilterDirector.innerText = 'Por director';
+    btnsortScoreDesc.innerText = '- lpopular';
+    btnSort3.innerText = 'Por estreno';
+    btnsortDateAsc.innerText='Newer';
+    btnsortDateDesc.innerText='Older';
+    btnFilter1.innerText = 'Por director';
     btnFilterHayaoM.innerText = 'Hayao Miyazaki';
-    btnFilterOthers.innerText = 'Otros';
-    
-    btnFilterYear.innerText = 'Por año';
-    btnFilter80.innerText = '80s';
-    btnFilter90.innerText = '90s';
-    btnFilter00.innerText = '00s';
+    btnFilterIsaoT.innerText = 'Isao Takahata';
+
 })
 let conditionDirector = ['director','Hayao Miyazaki'];
+let conditionDirector2 = ['director','Isao Takahata'];
 
-btnFilterDirector.addEventListener('click',()=>{
+btnFilterHayaoM.addEventListener('click',()=>{
     divRoot.innerHTML = '';
-    show(filterData(data,conditionDirector),'poster','title','description')
+    show(filterData(data,conditionDirector),'poster','title','director')
+})
+
+btnFilterIsaoT.addEventListener('click', ()=> {
+    divRoot.innerHTML ='';
+    show(filterData(data,conditionDirector2),'poster','title','director')
 })
 

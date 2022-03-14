@@ -48,7 +48,10 @@ header{
 
 #descripcion{
   grid-area: descripcion;
-  
+  color: white;
+  font-size: 15px;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +67,6 @@ h1{
   color: white;
   font-size: 33px;
   font-family: 'Abhaya Libre';
-
 }
 li{
   font-size: 18px;
@@ -154,20 +156,18 @@ li{
   margin:auto;
   width:100px;
   font-family:'Abhaya Libre';
-
   position: relative;
-    top: 50vh;
-    left: -33vw;
+    top: 47vh;
+    left: -11vw;
 }
 #options2 {
   
   margin:auto;
   width:100px;
   font-family:'Abhaya Libre';
-
   position: relative;
-    top: 50vh;
-    left: -33vw;
+    top: 47vh;
+    left: -22vw;
 }
 ul, ol {
   list-style:none;
@@ -205,7 +205,7 @@ ul, ol {
 }
 
 .optionBy li ul li ul {
-  right:-125px;
+  right:-90px;
   top:0px;
   width:100%;
 }
@@ -250,6 +250,9 @@ ul, ol {
     font-size: 80px;
     top: 150px; right: 60px;
   }
+  #descripcion {
+    font-size: 25px;
+  }
   .backTarget{
     height: 100%;
   }
@@ -265,15 +268,15 @@ ul, ol {
     margin:auto;
     width:500px;
     position: relative;
-    top: 761px;
-    left: -6vw;
+    top: 723px;
+    left: -2vw;
   }
   #options2 {
     margin:auto;
     width:500px;
     position: relative;
-    top: 50vh;
-    left: -3vw;
+    top: 95.5vh;
+    left: -6vw;
   }
 
   .optionBy li button{
