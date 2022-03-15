@@ -7,12 +7,12 @@ export const sortData=(data,sortBy,sortOrder)=>{
   { 
     return sortFilms.sort((a, b) => 
     { if(isNaN(parseInt(a[sortBy])))
-      {
+      { console.log(a[sortBy] > b[sortBy] ? 1 : -1)
         return (a[sortBy] > b[sortBy] ? 1 : -1);
       }
       else
-      {
-        return (parseInt(a[sortBy]) < parseInt(b[sortBy]) ? 1 : -1);
+      {console.log(parseInt(a[sortBy]) > parseInt(b[sortBy]) ? 1 : -1)
+        return (parseInt(a[sortBy]) > parseInt(b[sortBy]) ? 1 : -1);
       }
     }
     );
@@ -28,7 +28,7 @@ export const sortData=(data,sortBy,sortOrder)=>{
       }
       else
       {
-        return (parseInt(a[sortBy]) > parseInt(b[sortBy]) ? 1 : -1);
+        return (parseInt(a[sortBy]) < parseInt(b[sortBy]) ? 1 : -1);
       }
     }
     );

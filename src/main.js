@@ -84,16 +84,20 @@ btnFilm.addEventListener('click',()=>{
     btnsort1Asc.value = 'titleAsc';
     btnsort1Desc.innerText = 'Z-A';
     btnsort1Desc.value = 'titleDesc';
+    btnSort2.style.display = 'block';
     btnSort2.innerText = 'Popularidad';
-    btnsort2Asc.innerText = '+ popular';
-    btnsort2Desc.innerText = '- popular';
+    btnsort2Asc.innerText = '- popular';
+    btnsort2Asc.value = 'popularAsc';
+    btnsort2Desc.innerText = '+ popular';
+    btnSort3.style.display = 'block'
     btnSort3.innerText = 'Por estreno';
     btnsort3Asc.innerText='Newer';
     btnsort3Desc.innerText='Older';
     btnFilter1.innerText = 'Por director';
     btnsub1Filter1.innerText = 'Hayao Miyazaki';
     btnsub2Filter1.innerText = 'Isao Takahata';
-    btnsub3Filter1.style.display = 'none'
+    btnsub3Filter1.style.display = 'none';
+    btnFilter2.style.display = 'none';
 })
 
 
@@ -106,22 +110,18 @@ btnsort1Asc.addEventListener('click',()=>{
     {
         case 'titleAsc':
             {   let ascFilms = sortData(films,'title','asc');
-                console.log(ascFilms);
-            show(ascFilms,'poster','description','title');
                 
+                show(ascFilms,'poster','description','title');
                 break;
             }
         case 'nameAsc':
             {
-
                 let ascNames = sortData(people,'name','asc');
-                console.log(ascNames);
-            show(ascNames,'img','name','specie');
+                
+                show(ascNames,'img','name','specie');
                 break;
             }
     }
-
-
 })
 btnsort1Desc.addEventListener('click',()=>{
     divRoot.innerHTML = '';
@@ -150,7 +150,6 @@ btnsort2Desc.addEventListener('click',()=>{
 })
 
 btnsort2Asc.addEventListener('click',()=>{
-
     divRoot.innerHTML = '';
     show(sortData(films,'rt_score','asc'),'poster','rt_score','title');
 })
@@ -166,25 +165,18 @@ btnsort3Desc.addEventListener('click',()=>{
     divRoot.innerHTML = '';
     show(sortData(films,'release_date','desc'),'poster','release_date','title');
 })
-
-
-
-
-
-
-
-
 window.addEventListener("load",()=>{
     options.style.display = 'block';
     btnFilter2.style.display= 'none';
     show(data.films,'poster','description','title');
     btnSort1.innerText='Por titulos';
     btnsort1Asc.innerText = 'A-Z';
+    btnsort1Asc.value = 'titleAsc';
     btnsort1Desc.innerText = 'Z-A';
     btnsort1Desc.value = 'titleDesc';
     btnSort2.innerText = 'Popularidad';
-    btnsort2Asc.innerText = '+ popular';
-    btnsort2Desc.innerText = '- popular';
+    btnsort2Asc.innerText = '- popular';
+    btnsort2Desc.innerText = '+ lpopular';
     btnSort3.innerText = 'Por estreno';
     btnsort3Asc.innerText='Newer';
     btnsort3Desc.innerText='Older';
@@ -211,8 +203,10 @@ btnCharacter.addEventListener('click',()=>{
     btnsort1Asc.value = 'nameAsc';
     btnsort1Desc.innerText = 'Z-A';
     btnsort1Desc.value = 'nameDesc';
+    btnSort2.style.display = 'none';
     btnSort2.innerText = 'Por edad';
     btnsort2Asc.innerText = '< mayores';
+    btnsort2Asc.value = 'ageAsc';
     btnsort2Desc.innerText = '> menores';
     btnSort3.style.display = 'none';
     btnFilter1.innerText= 'Por genero';
