@@ -1,7 +1,7 @@
 // estas funciones son de ejemplo
 
 export const sortData=(data,sortBy,sortOrder)=>{
-  let sortFilms = data;
+  let sortFilms = [...data];
   if(sortOrder=='asc')
   { 
     return sortFilms.sort((a, b) => 
