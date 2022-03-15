@@ -83,6 +83,7 @@ btnFilm.addEventListener('click',()=>{
     btnsort1Asc.innerText = 'A-Z';
     btnsort1Asc.value = 'titleAsc';
     btnsort1Desc.innerText = 'Z-A';
+    btnsort1Desc.value = 'titleDesc';
     btnSort2.innerText = 'Popularidad';
     btnsort2Asc.innerText = '+ popular';
     btnsort2Desc.innerText = '- popular';
@@ -122,6 +123,31 @@ btnsort1Asc.addEventListener('click',()=>{
 
 
 })
+btnsort1Desc.addEventListener('click',()=>{
+    divRoot.innerHTML = '';
+    switch(btnsort1Desc.value)
+     {
+         case 'titleDesc':
+             {   
+                 let descFilms = sortData(films,'title','desc');
+             show(descFilms,'poster','description','title');
+                 
+                 break;
+             }
+         case 'nameDesc':
+             {
+                 let descNames = sortData(people,'name','desc');
+             show(descNames,'img','name','specie');
+                 break;
+             }
+     }
+ })
+
+btnsort2Desc.addEventListener('click',()=>{
+
+    divRoot.innerHTML = '';
+    show(sortData(films,'rt_score','desc'),'poster','rt_score','title');
+})
 
 btnsort2Asc.addEventListener('click',()=>{
 
@@ -142,18 +168,10 @@ btnsort3Desc.addEventListener('click',()=>{
 })
 
 
-btnsort1Desc.addEventListener('click',()=>{
-   divRoot.innerHTML = '';
-
-   show(sortData(films,'title','desc'),'poster','description','title');
-})
 
 
-btnsort2Desc.addEventListener('click',()=>{
 
-    divRoot.innerHTML = '';
-    show(sortData(films,'rt_score','desc'),'poster','rt_score','title');
-})
+
 
 
 window.addEventListener("load",()=>{
@@ -163,9 +181,10 @@ window.addEventListener("load",()=>{
     btnSort1.innerText='Por titulos';
     btnsort1Asc.innerText = 'A-Z';
     btnsort1Desc.innerText = 'Z-A';
+    btnsort1Desc.value = 'titleDesc';
     btnSort2.innerText = 'Popularidad';
     btnsort2Asc.innerText = '+ popular';
-    btnsort2Desc.innerText = '- lpopular';
+    btnsort2Desc.innerText = '- popular';
     btnSort3.innerText = 'Por estreno';
     btnsort3Asc.innerText='Newer';
     btnsort3Desc.innerText='Older';
@@ -191,6 +210,7 @@ btnCharacter.addEventListener('click',()=>{
     btnsort1Asc.innerText = 'A-Z';
     btnsort1Asc.value = 'nameAsc';
     btnsort1Desc.innerText = 'Z-A';
+    btnsort1Desc.value = 'nameDesc';
     btnSort2.innerText = 'Por edad';
     btnsort2Asc.innerText = '< mayores';
     btnsort2Desc.innerText = '> menores';
