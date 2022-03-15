@@ -1,7 +1,8 @@
 // estas funciones son de ejemplo
 
 export const sortData=(data,sortBy,sortOrder)=>{
-  let sortFilms = data;
+  let sortFilms = [...data];
+
   if(sortOrder=='asc')
   { 
     return sortFilms.sort((a, b) => 
@@ -37,7 +38,7 @@ export const sortData=(data,sortBy,sortOrder)=>{
 
 export const filterData=(data,condition)=>{
    
-      let arr=data.films.filter(film=>film[condition[0]] == condition[1]);
+      let arr=data.filter(film=>film[condition[0]] == condition[1]);
      
 
       //let arr2=arr.flat();
