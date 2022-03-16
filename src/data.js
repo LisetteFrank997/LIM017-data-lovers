@@ -7,11 +7,11 @@ export const sortData=(data,sortBy,sortOrder)=>{
   { 
     return sortFilms.sort((a, b) => 
     { if(isNaN(parseInt(a[sortBy])))
-      { console.log(a[sortBy] > b[sortBy] ? 1 : -1)
+      { 
         return (a[sortBy] > b[sortBy] ? 1 : -1);
       }
       else
-      {console.log(parseInt(a[sortBy]) > parseInt(b[sortBy]) ? 1 : -1)
+      {
         return (parseInt(a[sortBy]) > parseInt(b[sortBy]) ? 1 : -1);
       }
     }
@@ -39,11 +39,8 @@ export const sortData=(data,sortBy,sortOrder)=>{
 export const filterData=(data,condition)=>{
    
       let arr=data.filter(film=>film[condition[0]] == condition[1]);
-     
-
-      //let arr2=arr.flat();
-      console.log(arr);
+      
       return arr;
 };
 
-//condition =['director','hayao']
+
