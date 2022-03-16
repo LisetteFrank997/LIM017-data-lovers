@@ -232,6 +232,28 @@ ul, ol {
   background-color:#6eb459;
 }
 
+.btnSpecie{
+ 
+  margin: 15px;
+  border: 0;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  padding: 13px;
+  background-image:  linear-gradient( blue 30%, pink);
+}
+#boxSpecies{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+  top: 122px;
+}
+
+#boxSpecies>h2{
+  flex: 100%;
+  text-align: center;
+}
 @media only screen and (min-width: 768px){
  
   .target-box{
@@ -298,5 +320,18 @@ ul, ol {
     padding:10px 12px;
     font-size: 40px;
   }
-  
+  .btnSpecie{
+   
+    margin: 15px;
+    border: 0;
+    border-radius: 50%;
+    height: 150px;
+    padding: 13px;
+    background-color: #6eb459;
+  }
+  #boxSpecies{
+    top: 150px;
+    
+    
+  }
 }
