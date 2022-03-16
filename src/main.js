@@ -305,28 +305,28 @@ let arrSpecies = species.reduce((unique,item)=>unique.includes(item)?unique:[...
 let titleSpecies = "Personajes por Especies";
 let html = `<h2>${titleSpecies}</h2>`;
 for(const x of arrSpecies){
-    html += `<button class='btnSpecie'>${x}</button>`;
+    html += `<button class='btnSpecie' value='${x}'>${x}</button>`;
 }
 
 let boxSpecies=document.getElementById('boxSpecies');
-btnsub2Filter2.addEventListener('click', ()=> {
-    divRoot.innerHTML ='';
-    boxSpecies.innerHTML=html;
-})
-let btns = document.getElementsByClassName('btnSpecie');
-document.getElementsByClassName('btnSpecie')[0].style.color = "red";
-console.log('botones: ',btns);
-for (const e of btns) {
-    console.log('elemento',e);
-}
-console.log('array convertido',btns.item(0));
 
-for (let i = 0; i < btns.length; i++) {
+btnsub2Filter2.addEventListener('click', ()=> {
+    boxSpecies.innerHTML=html;
+    divRoot.innerHTML ='';
+    let btns = document.getElementsByClassName('btnSpecie');
+
+    for (let i = 0; i < btns.length; i++) {
     
-    btns[i].addEventListener("click", ()=>{
-        
-    });
-}
+        btns[i].addEventListener("click", ()=>{
+        let condition=['specie',btns[i].value];
+        let arr=filterData(people,condition);
+        boxSpecies.innerHTML='';
+        show(arr,'img','name','specie');
+        });
+    }
+})
+
+
 
 
 
