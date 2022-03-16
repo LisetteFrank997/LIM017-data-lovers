@@ -38,7 +38,7 @@ export const sortData=(data,sortBy,sortOrder)=>{
 
 export const filterData=(data,condition)=>{
    
-      let arr=data.filter(film=>film[condition[0]] == condition[1]);
+      let arr=data.filter(elem=>elem[condition[0]] == condition[1]);
       
       return arr;
 };
