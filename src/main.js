@@ -83,6 +83,7 @@ btnFilm.addEventListener('click',()=>{
     btnsort1Asc.innerText = 'A-Z';
     btnsort1Asc.value = 'titleAsc';
     btnsort1Desc.innerText = 'Z-A';
+    btnsort1Desc.value = 'titleDesc';
     btnSort2.style.display = 'block';
     btnSort2.innerText = 'Popularidad';
     btnsort2Asc.innerText = '- popular';
@@ -124,6 +125,31 @@ btnsort1Asc.addEventListener('click',()=>{
             }
     }
 })
+btnsort1Desc.addEventListener('click',()=>{
+    divRoot.innerHTML = '';
+    switch(btnsort1Desc.value)
+     {
+         case 'titleDesc':
+             {   
+                 let descFilms = sortData(films,'title','desc');
+             show(descFilms,'poster','description','title');
+                 
+                 break;
+             }
+         case 'nameDesc':
+             {
+                 let descNames = sortData(people,'name','desc');
+             show(descNames,'img','name','specie');
+                 break;
+             }
+     }
+ })
+
+btnsort2Desc.addEventListener('click',()=>{
+
+    divRoot.innerHTML = '';
+    show(sortData(films,'rt_score','desc'),'poster','rt_score','title');
+})
 
 btnsort2Asc.addEventListener('click',()=>{
     divRoot.innerHTML = '';
@@ -160,7 +186,6 @@ btnsort2Desc.addEventListener('click',()=>{
     show(sortData(films,'rt_score','desc'),'poster','rt_score','title');
 })
 
-
 window.addEventListener("load",()=>{
     options.style.display = 'block';
     btnFilter2.style.display= 'none';
@@ -169,6 +194,7 @@ window.addEventListener("load",()=>{
     btnsort1Asc.innerText = 'A-Z';
     btnsort1Asc.value = 'titleAsc';
     btnsort1Desc.innerText = 'Z-A';
+    btnsort1Desc.value = 'titleDesc';
     btnSort2.innerText = 'Popularidad';
     btnsort2Asc.innerText = '- popular';
     btnsort2Desc.innerText = '+ lpopular';
@@ -198,6 +224,7 @@ btnCharacter.addEventListener('click',()=>{
     btnsort1Asc.innerText = 'A-Z';
     btnsort1Asc.value = 'nameAsc';
     btnsort1Desc.innerText = 'Z-A';
+    btnsort1Desc.value = 'nameDesc';
     btnSort2.style.display = 'none';
     btnSort2.innerText = 'Por edad';
     btnsort2Asc.innerText = '< mayores';
