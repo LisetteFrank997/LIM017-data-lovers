@@ -3,21 +3,94 @@
   padding: 0;
 }
 
-body{
-  margin: 0;
-  overflow-x: hidden;
+
+img {
+  box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
 }
+
 main{
- 
-  background-image: url(img/familiarb.png);
+
+  height: 100vh;
+  width: 100vw;
+  background: url(img/totorro.jfif) no-repeat center center fixed;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 50vh;
-  background-size: 100vw 50vh;
-  /*position: absolute;*/
-  
+  display: grid;
+  grid-template-columns: repeat(15,10%);
+  grid-template-rows: repeat(15,1fr);
 }
-#neblina{
+#carrouselFilms{
+  grid-column: 1/span 10;
+  grid-row: 11/span 7;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+#forward{
+  grid-column: 10;
+  grid-row: 13;
+  z-index: 1;
+  background: none;
+  color: #ffffff;
+  font-size: 40px;
+  border: none;
+  text-shadow: -2px -2px 1px rgb(126, 126, 129);
+
+}
+#back{
+  grid-column: 1;
+  grid-row: 13;
+  z-index: 1;
+  background: none;
+  color: #ffffff;
+  font-size: 40px;
+  border: none;
+  text-shadow: -2px -2px 1px rgb(126, 126, 129);
+}
+.imgPoster{
+  width: 180px;
+  height: 280px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+input[type=radio]{
+  display:none;
+}
+.btnMain{
+  background-color:#6591A7;
+  color:#fff;
+  text-decoration:none;
+  padding:5px 8px;
+  font-size: 16px;
+  display:block;
+  border:0;
+}
+.btnMain:hover {
+  background-color:#6eb459;
+}
+
+#btnFilm{
+  grid-column: 2/ span 2;
+  grid-row: 5;
+  width: 120px;
+}
+#btnCharacter {
+  grid-column: 3/ span 2;
+  grid-row: 7;
+  width: 120px;
+}
+#btnCompute {
+  grid-column: 4/ span 2;
+  grid-row: 9;
+  width: 120px;
+}
+
+#fondo{
+  max-width: 100%;
+  max-height: 100%;
+}
+/*#neblina{
   display: grid;
   grid-template-areas: " home .   . "
                       ".  logo ."
@@ -36,18 +109,20 @@ main{
   position: relative;
   top: 3%;
   padding: 5%;
-}
+}*/
 ul{
   color: white;
 }
 header{
-  grid-area: logo;
+  grid-column: 7/span 4;
+    grid-row: 3/span 4;
   display: flex;
   justify-content: center;
 }
 
 #descripcion{
-  grid-area: descripcion;
+  grid-column: 7/span 4;
+  grid-row: 6/span 4;
   color: white;
   font-size: 15px;
   text-shadow: 1px 1px 2px black;
@@ -66,11 +141,11 @@ header{
 h1{
   color: white;
   font-size: 33px;
-  font-family: 'Abhaya Libre';
+  font-family: 'Open Sans';
 }
 li{
   font-size: 18px;
-  font-family: 'Abhaya Libre';
+  font-family: 'Open Sans';
 }
 
 
@@ -96,6 +171,9 @@ li{
 }
 
 .target-box {
+  background-image: url('img/tarjetaS.svg');
+  background-repeat: no-repeat;
+  background-position: center;
     flex: 100%;
     height: 40vh;
     position: relative;
@@ -112,6 +190,7 @@ li{
   }
   
   .target {
+   
     display: flex;
     justify-content: center;
     transform-style: preserve-3d;
@@ -148,26 +227,26 @@ li{
 }
 .window{
   position: absolute;
-  width: 88%;
+  width: 47%;
 }
-
+#SortFilter{
+  display: none;
+}
 #options {
-  
   margin:auto;
   width:100px;
-  font-family:'Abhaya Libre';
+  font-family:'Open Sans';
   position: relative;
-    top: 47vh;
-    left: -11vw;
+    top: 8vh;
+    left: 30vw;
 }
 #options2 {
-  
   margin:auto;
   width:100px;
-  font-family:'Abhaya Libre';
+  font-family:'Open Sans';
   position: relative;
-    top: 47vh;
-    left: -22vw;
+    top: 8vh;
+    left: 36vw;
 }
 ul, ol {
   list-style:none;
@@ -208,28 +287,6 @@ ul, ol {
   right:-90px;
   top:0px;
   width:100%;
-}
-#nav {
-  grid-area: nav;
-  margin:auto;
-  width:350px;
-  font-family:'Abhaya Libre';
-}
-.items > li {
-  float:left;
-}
-.items li button {
-  background-color:#6591A7;
-  color:#fff;
-  text-decoration:none;
-  padding:5px 8px;
-  font-size: 16px;
-  display:block;
-  border:0;
-}
-
-.items li button:hover {
-  background-color:#6eb459;
 }
 
 .btnSpecie{
@@ -278,15 +335,9 @@ ul, ol {
   .backTarget{
     height: 100%;
   }
-  main{
-  
-    background-image: url(img/fondo10.jpg);
-    background-size: 100vw 100vh;
-    height: 100vh;
 
-  
-  }
   #options {
+    display: none;
     margin:auto;
     width:500px;
     position: relative;
@@ -331,7 +382,12 @@ ul, ol {
   }
   #boxSpecies{
     top: 150px;
-    
-    
   }
+  .window {
+    width: 56%;
+    height: 380px;
+}
+.target{
+  margin-top: 40%;
+}
 }

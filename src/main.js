@@ -2,54 +2,103 @@ import {sortData, filterData} from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
-export const show=(contentGhibli,img,back1,back2)=>{
-    let i=0;
-    const box = document.createElement('section'); 
-    box.classList.add('container')
-    while(i<contentGhibli.length)
-    {
-     
-    const targetBox=document.createElement('div');
-    const target = document.createElement('div');
-    const faceTarget = document.createElement('div');
-    const poster = document.createElement('img');
-    const backTarget= document.createElement('div');
-    const title = document.createElement('div');
-    const window = document.createElement('img');
-    
-    poster.src = contentGhibli[i][img];
-    
-    let description = contentGhibli[i][back1];
-    let titulo = contentGhibli[i][back2];
-    title.textContent = titulo;
-    window.src = 'img/pink.svg';
-  
-    title.classList.add('titleFilm');
-    
-    backTarget.innerHTML = titulo + '<br>' + 'score: ' + description;
-   
-    targetBox.classList.add('target-box');
-    
-    target.classList.add('target');
-    window.classList.add('window');
-    faceTarget.classList.add('faceTarget');
-    backTarget.classList.add('backTarget');
-    poster.classList.add('poster');
-    
-    document.getElementById('root').appendChild(box);
-    box.insertAdjacentElement('beforeend',targetBox);
-    targetBox.insertAdjacentElement('afterbegin',target);
-    targetBox.insertAdjacentElement('afterbegin',window);
-    
-    target.insertAdjacentElement('afterbegin',backTarget);
-    target.insertAdjacentElement('afterbegin',faceTarget);
-    
-    faceTarget.insertAdjacentElement('afterbegin',poster);
+const films=data.films;
+let containerSliders=`<div class='containerFilms'>`;
+let i=1;
 
+for(const e of films){
+    if(i==1)
+    {
+        containerSliders += `<input type='radio' name='slider' id='item-${i}' checked>`;
+    }
+    else{
+        containerSliders += `<input type='radio' name='slider' id='item-${i}'>`;
+    }
+ 
     i++;
+}
+let cards=`<div class='cards' id='cards'>`;
+i=1;
+for(const e of films) {
+    cards += `<label class='card' for= 'item-${i}' id='movie-${i}'> <img src=${e.poster} class="imgPoster"> </label>`;
+    i++;
+}
+cards+=`</div>`;
+containerSliders+=cards + `</div>`;
+let carrusel = document.getElementById('carrouselFilms');
+carrusel.innerHTML = containerSliders;
+const btnForward = document.getElementById('forward');
+const btnBack = document.getElementById('back');
+
+btnForward.addEventListener('click',()=>{
+    sideScroll(carrusel,'right',100,50,300);
+})
+btnBack.addEventListener('click',()=>{
+    sideScroll(carrusel,'left',100,50,300);
+})
+function sideScroll(element,direction,speed,distance,step){
+    let scrollAmount = 0;
+    let slideTimer = setInterval(function(){
+        if(direction == 'left'){
+            element.scrollLeft -= step;
+        } else {
+            element.scrollLeft += step;
+        }
+        scrollAmount += step;
+        if(scrollAmount >= distance){
+            window.clearInterval(slideTimer);
+        }
+    }, speed);
+}
+
+
+function show(contentGhibli, img, back1, back2) {
+    console.log(contentGhibli);
+    let i = 0;
+    const box = document.createElement('section');
+    box.classList.add('container');
+    while (i < contentGhibli.length) {
+
+        const targetBox = document.createElement('div');
+        const target = document.createElement('div');
+        const faceTarget = document.createElement('div');
+        const poster = document.createElement('img');
+        const backTarget = document.createElement('div');
+        const title = document.createElement('div');
+        const window = document.createElement('img');
+
+        poster.src = contentGhibli[i][img];
+
+        let description = contentGhibli[i][back1];
+        let titulo = contentGhibli[i][back2];
+        title.textContent = titulo;
+        //window.src = 'img/tarjetaS.svg';
+        title.classList.add('titleFilm');
+
+        backTarget.innerHTML = titulo + '<br>' + 'score: ' + description;
+
+        targetBox.classList.add('target-box');
+
+        target.classList.add('target');
+        window.classList.add('window');
+        faceTarget.classList.add('faceTarget');
+        backTarget.classList.add('backTarget');
+        poster.classList.add('poster');
+
+        document.getElementById('root').appendChild(box);
+        box.insertAdjacentElement('beforeend', targetBox);
+        targetBox.insertAdjacentElement('afterbegin', target);
+
+
+        target.insertAdjacentElement('afterbegin', backTarget);
+        target.insertAdjacentElement('afterbegin', faceTarget);
+
+        faceTarget.insertAdjacentElement('afterbegin', poster);
+
+        i++;
     }
     return box;
-  }
+}
 
 const divRoot = document.getElementById('root');
 let btnFilm = document.getElementById('btnFilm');
@@ -73,11 +122,18 @@ const btnsub1Filter2= document.getElementById('sub1BtnFilter2');
 const btnsub2Filter2= document.getElementById('sub2BtnFilter2');
 
 const btnCharacter = document.getElementById('btnCharacter'); 
-
-
+const main=document.querySelector('main');
+const SortFilter=document.getElementById('SortFilter');
 btnFilm.addEventListener('click',()=>{
+
+   main.style.display='none';
     divRoot.innerHTML = '';
+
     boxSpecies.innerHTML = '';
+    let titleFilm = `<div class='titles'>Peliculas</div>
+                    <div class='subtitles'>Studio Ghibli</div>`;
+    divRoot.innerHTML=titleFilm;
+    SortFilter.style.display='block';
     show(data.films,'poster','description','title');
     btnSort1.innerText='Por titulos';
     btnsort1Asc.innerText = 'A-Z';
@@ -102,8 +158,6 @@ btnFilm.addEventListener('click',()=>{
     btnFilter2.style.display = 'none';
 })
 
-
-const films=data.films;
 const people=films.map(e=>e.people).flat();
 
 btnsort1Asc.addEventListener('click',()=>{
@@ -186,7 +240,7 @@ btnsort2Desc.addEventListener('click',()=>{
     show(sortData(films,'rt_score','desc'),'poster','rt_score','title');
 })
 
-window.addEventListener("load",()=>{
+/*window.addEventListener("load",()=>{
     options.style.display = 'block';
     btnFilter2.style.display= 'none';
     show(data.films,'poster','description','title');
@@ -207,18 +261,18 @@ window.addEventListener("load",()=>{
     btnsub2Filter1.innerText = 'Isao Takahata';
     btnsub2Filter1.value = 'Isao Takahata';
     btnsub3Filter1.style.display = 'none'
-})
+})*/
 let conditionDirector = ['director','Hayao Miyazaki'];
 let conditionDirector2 = ['director','Isao Takahata'];
 
 
 
 btnCharacter.addEventListener('click',()=>{
+    main.style.display='none';
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let characters=[];
     data.films.forEach(e=>characters.push(e.people));
-    
     show(characters.flat(),'img','name','gender');
     btnSort1.innerText='Por nombres';
     btnsort1Asc.innerText = 'A-Z';
@@ -310,7 +364,7 @@ for(const x of arrSpecies){
 
 let boxSpecies=document.getElementById('boxSpecies');
 
-btnsub2Filter2.addEventListener('click', ()=> {
+btnsub2Filter2.addEventListener("click", ()=> {
     boxSpecies.innerHTML=html;
     divRoot.innerHTML ='';
     let btns = document.getElementsByClassName('btnSpecie');
@@ -325,8 +379,6 @@ btnsub2Filter2.addEventListener('click', ()=> {
         });
     }
 })
-
-
 
 
 
