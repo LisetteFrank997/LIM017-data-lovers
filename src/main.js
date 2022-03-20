@@ -308,6 +308,7 @@ for(const x of arrSpecies){
     html += `<button class='btnSpecie' value='${x}'>${x}</button>`;
 }
 
+
 let boxSpecies=document.getElementById('boxSpecies');
 
 btnsub2Filter2.addEventListener('click', ()=> {
