@@ -5,14 +5,12 @@
     <title>Studio Ghibli</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6dead8e9d1.js" crossorigin="anonymous"></script>
   </head>
-  <body>
-    
+  <body >
+   
     <main>
-      <div id="neblina">
-        
-          <img id="homeIcon" src="img/casa.png" alt="">
-        
+      
         <header>
           <img id="logo" src="img/logoTiny.png" alt="logo">
           <h1>Studio Ghibli</h1>
@@ -22,71 +20,75 @@
           Aquí encontrarás información y datos curiosos sobre tus películas
           y personajes favoritos de Studio Ghibli.
         </div>
+        <button class="btnMain" id="btnFilm">Películas</button>
+        <button class="btnMain" id="btnCharacter">Personajes</button>
+        <button class="btnMain" id="btnCompute">Estadisticas</button>
+        <button id="forward"><i class="fa-solid fa-circle-chevron-right"></i></button>
+        <button id="back"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        <section id="carrouselFilms">
+            
+            
+        </section>
 
-        <div id="nav">
-         <ul class="items">
-          
-           <li><button id="btnFilm">Películas</button></li>
-           <li><button id="btnCharacter">Personajes</button></li>
-           <li><button id="btnCompute">Estadisticas</button></li>
-         </ul>
-        </div>
-        <did id="options"> 
-          <ul class="optionBy">
-            <li><button id="btnSort">Ordenar</button>
-              <ul>
-                <li><button id="btnSort1"></button>
-                  <ul>
-                   <li><button id="sub1BtnSort1"></button></li>
-                   <li><button id="sub2BtnSort1"></button></li>
-                  </ul>
-                </li>
-                <li><button id="btnSort2"></button>
-                  <ul>
-                    <li><button id="sub1BtnSort2"></button></li>
-                    <li><button id="sub2BtnSort2"></button></li>
-                  </ul>
-                </li>
-                <li><button id="btnSort3"></button>
-                  <ul>
-                    <li><button id="sub1BtnSort3"></button></li>
-                    <li><button id="sub2BtnSort3"></button></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </did>  
-        <did id="options2"> 
-          <ul class="optionBy">
-            <li><button id="btnFilter">Filtrar</button>
-              <ul>
-                <li><button id="btnFilter1"></button>
-                  <ul>
-                   <li><button id="sub1BtnFilter1"></button></li>
-                   <li><button id="sub2BtnFilter1"></button></li>
-                   <li><button id="sub3BtnFilter1"></button></li>
-                  </ul>
-                </li>
-                <li><button id="btnFilter2"></button>
-                  <ul>
-                    <li><button id="sub1BtnFilter2"></button></li>
-                    <li><button id="sub2BtnFilter2"></button></li>
-                    <li><button id="sub3BtnFilter2"></button></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </did>  
-      </div>
        
- 
+
     </main>
-   
+    <section id="SortFilter">
+      <did id="options"> 
+        <ul class="optionBy">
+          <li><button id="btnSort">Ordenar</button>
+            <ul>
+              <li><button id="btnSort1"></button>
+                <ul>
+                 <li><button id="sub1BtnSort1"></button></li>
+                 <li><button id="sub2BtnSort1"></button></li>
+                </ul>
+              </li>
+              <li><button id="btnSort2"></button>
+                <ul>
+                  <li><button id="sub1BtnSort2"></button></li>
+                  <li><button id="sub2BtnSort2"></button></li>
+                </ul>
+              </li>
+              <li><button id="btnSort3"></button>
+                <ul>
+                  <li><button id="sub1BtnSort3"></button></li>
+                  <li><button id="sub2BtnSort3"></button></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </did>  
+      
+      <did id="options2"> 
+        <ul class="optionBy">
+          <li><button id="btnFilter">Filtrar</button>
+            <ul>
+              <li><button id="btnFilter1"></button>
+                <ul>
+                 <li><button id="sub1BtnFilter1"></button></li>
+                 <li><button id="sub2BtnFilter1"></button></li>
+                 <li><button id="sub3BtnFilter1"></button></li>
+                </ul>
+              </li>
+              <li><button id="btnFilter2"></button>
+                <ul>
+                  <li><button id="sub1BtnFilter2"></button></li>
+                  <li><button id="sub2BtnFilter2"></button></li>
+                  <li><button id="sub3BtnFilter2"></button></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </did>  
+
+    </section>
     <section id="boxSpecies">
       
     </section>
+
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
