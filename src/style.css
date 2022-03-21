@@ -13,11 +13,6 @@
   width: 120px;
 }
 
-
-img {
-  box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
-}
-
 main{
 
   height: 100vh;
@@ -26,11 +21,11 @@ main{
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
-  grid-template-columns: repeat(15,10%);
+  grid-template-columns: repeat(15,9%);
   grid-template-rows: repeat(15,1fr);
 }
 #carrouselFilms{
-  grid-column: 1/span 10;
+  grid-column: 1/span 11;
   grid-row: 11/span 7;
   display: flex;
   overflow-x: hidden;
@@ -38,8 +33,9 @@ main{
   white-space: nowrap;
 }
 #forward{
-  grid-column: 10;
+  grid-column: 9;
   grid-row: 13;
+  width: 90px;
   z-index: 1;
   background: none;
   color: #ffffff;
@@ -51,6 +47,7 @@ main{
 #back{
   grid-column: 1;
   grid-row: 13;
+  width: 90px;
   z-index: 1;
   background: none;
   color: #ffffff;
@@ -105,15 +102,15 @@ ul{
   color: white;
 }
 header{
-  grid-column: 6/span 4;
-    grid-row: 4/span 4;
+  grid-column: 7/span 2;
+    grid-row: 2/span 4;
   display: flex;
   justify-content: center;
 }
 
 #descripcion{
   grid-column: 7/span 4;
-  grid-row: 6/span 4;
+  grid-row: 4/span 2;
   color: white;
   font-size: 15px;
   text-shadow: 1px 1px 2px black;
@@ -161,7 +158,7 @@ li{
   backface-visibility: hidden;
 }
 h2 {
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
@@ -215,9 +212,8 @@ h2 {
   .poster{
   display: flex;
   width:100%;
-  height:auto;
+  height:100%;
   position: relative;
-  
   }
  
 #logo {
@@ -232,8 +228,13 @@ h2 {
 }
 #SortFilter{
   display: none;
+  
+  grid-template-columns: repeat(7,10%);
+  grid-template-rows: repeat(3,30%);
 }
 #options {
+  grid-column: 3;
+  grid-row: 2;
   margin:auto;
   width:100px;
   font-family:'Open Sans';
@@ -242,6 +243,8 @@ h2 {
     left: 30vw;
 }
 #options2 {
+  grid-column: 5;
+  grid-row: 2;
   margin:auto;
   width:100px;
   font-family:'Open Sans';
@@ -315,6 +318,12 @@ button {
   flex: 100%;
   text-align: center;
 }
+#secondPage{
+  background-color: #449ed1;
+}
+#computeContainer{
+  display: none;
+}
 @media only screen and (min-width: 768px){
 
   #btnFilm {
@@ -325,6 +334,9 @@ button {
   }
   #btnCompute {
     width: 250px;
+  }
+  #forward{
+    grid-column: 11;
   }
 
   .target-box{
@@ -342,12 +354,14 @@ button {
     height: auto;
   }
 
+
   h1{
     font-size: 80px;
     top: 150px; right: 60px;
   }
   #descripcion {
     font-size: 25px;
+    grid-row: 7/span 2;
   }
   .backTarget{
     height: 100%;

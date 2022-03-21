@@ -269,6 +269,7 @@ let conditionDirector2 = ['director','Isao Takahata'];
 
 btnCharacter.addEventListener('click',()=>{
     main.style.display='none';
+    SortFilter.style.display = 'grid';
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let characters=[];
@@ -381,5 +382,12 @@ btnsub2Filter2.addEventListener("click", ()=> {
     }
 })
 
-
+const BTN_COMPUTE = document.getElementById('btnCompute');
+let computeContainer = document.getElementById('computeContainer');
+BTN_COMPUTE.addEventListener('click',()=>{
+    main.style.display='none';
+    divRoot.innerHTML = '';
+    boxSpecies.innerHTML = '';
+    computeContainer.style.display = 'block';
+})
 

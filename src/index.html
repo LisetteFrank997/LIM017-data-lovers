@@ -28,64 +28,99 @@
         <section id="carrouselFilms">
         </section>
     </main>
+    <section id="secondPage">
+      <section id="SortFilter">
+        <did id="options"> 
+          <ul class="optionBy">
+            <li><button class='buttonWidht' id="btnSort">Ordenar</button>
+              <ul>
+                <li><button  class='buttonWidht' id="btnSort1"></button>
+                  <ul>
+                    <li><button  class='buttonWidht' id="sub1BtnSort1"></button></li>
+                    <li><button  class='buttonWidht' id="sub2BtnSort1"></button></li>
+                  </ul>
+                </li>
+                <li><button  class='buttonWidht' id="btnSort2"></button>
+                  <ul>
+                    <li><button  class='buttonWidht' id="sub1BtnSort2"></button></li>
+                    <li><button  class='buttonWidht' id="sub2BtnSort2"></button></li>
+                  </ul>
+                </li>
+                <li><button  class='buttonWidht' id="btnSort3"></button>
+                  <ul>
+                    <li><button  class='buttonWidht' id="sub1BtnSort3"></button></li>
+                    <li><button  class='buttonWidht' id="sub2BtnSort3"></button></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </did>
+        <did id="options2">
+          <ul class="optionBy">
+            <li><button id="btnFilter">Filtrar</button>
+              <ul>
+                <li><button id="btnFilter1"></button>
+                  <ul>
+                    <li><button id="sub1BtnFilter1"></button></li>
+                    <li><button id="sub2BtnFilter1"></button></li>
+                    <li><button id="sub3BtnFilter1"></button></li>
+                  </ul>
+                </li>
+                <li><button id="btnFilter2"></button>
+                  <ul>
+                    <li><button id="sub1BtnFilter2"></button></li>
+                    <li><button id="sub2BtnFilter2"></button></li>
+                    <li><button id="sub3BtnFilter2"></button></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </did>
+      </section>
+      <section id="boxSpecies">
 
-    <section id="SortFilter">
-      <did id="options"> 
-        <ul class="optionBy">
-          <li><button id="btnSort">Ordenar</button>
-            <ul>
-              <li><button id="btnSort1"></button>
-                <ul>
-                 <li><button id="sub1BtnSort1"></button></li>
-                 <li><button id="sub2BtnSort1"></button></li>
-                </ul>
-              </li>
-              <li><button id="btnSort2"></button>
-                <ul>
-                  <li><button id="sub1BtnSort2"></button></li>
-                  <li><button id="sub2BtnSort2"></button></li>
-                </ul>
-              </li>
-              <li><button id="btnSort3"></button>
-                <ul>
-                  <li><button id="sub1BtnSort3"></button></li>
-                  <li><button id="sub2BtnSort3"></button></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </did>  
-      
-      <did id="options2"> 
-        <ul class="optionBy">
-          <li><button id="btnFilter">Filtrar</button>
-            <ul>
-              <li><button id="btnFilter1"></button>
-                <ul>
-                 <li><button id="sub1BtnFilter1"></button></li>
-                 <li><button id="sub2BtnFilter1"></button></li>
-                 <li><button id="sub3BtnFilter1"></button></li>
-                </ul>
-              </li>
-              <li><button id="btnFilter2"></button>
-                <ul>
-                  <li><button id="sub1BtnFilter2"></button></li>
-                  <li><button id="sub2BtnFilter2"></button></li>
-                  <li><button id="sub3BtnFilter2"></button></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </did>  
+      </section>
+      <div id="root"></div>
+      <section id="computeContainer">
+        <h2>¿Quieres conocer que personajes comparten las mismas caracteristicas? 
+        ¡Juega aquí!</h2>
+        <div id="option3">
+          <ul class="optionBy">
+            <li><button class='btnCompute' id="btnEyes">Color de ojos</button>
+              <ul>
+                <li><button>brown</button></li>
+                <li><button>black</button></li>
+                <li><button>green</button></li>
+              </ul>
+            </li>
+            <li><button class='btnCompute' id="btnHair">Color de cabello</button>
+              <ul>
+                <li><button>brown</button></li>
+                <li><button>black</button></li>
+                <li><button>green</button></li>
+              </ul>
+            </li>
+            <li><button class='btnCompute' id="btnSpecie">Especie</button>
+              <ul>
+                <li><button>Humanos</button></li>
+                <li><button>Animales</button></li>
+                <li><button>Magos/Brujas</button></li>
+                <li><button>Espiritus/Demonios</button></li>
+              </ul>
+            </li>
+            <li><button class='btnCompute' id="btnGender">Género</button>
+              <ul>
+                <li><button>Femenino</button></li>
+                <li><button>Masculino</button></li>
+                <li><button>Neutro</button></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
     </section>
-    
-    <section id="boxSpecies">
-      
-    </section>
-
-    <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
