@@ -1497,7 +1497,7 @@ export default {
         {
           "id": "1287b275-6c32-4113-947f-519316d4a6be",
           "name": "Witch of the Waste",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/e1/Howls-moving-castle-disneyscreencaps.com-10507.jpg",
+          "img": "https://i.pinimg.com/564x/4b/f9/ce/4bf9ce0336aee3637e9cb0e0de3e4962.jpg",
           "gender": "Female",
           "age": "59",
           "eye_color": "Brown",
@@ -1507,7 +1507,7 @@ export default {
         {
           "id": "b73f58ab-454a-42d6-9812-63e8f235a388",
           "name": "Calcifer",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/2/2a/Calcifer.png",
+          "img": "https://i.pinimg.com/564x/6d/07/58/6d0758c0983f1f7d7709bda68dae6ed6.jpg",
           "gender": "Male",
           "age": "NA",
           "eye_color": "Dark Brown",
@@ -1527,7 +1527,7 @@ export default {
         {
           "id": "45237428-93bf-4dd6-97ce-f10647300429",
           "name": "Prince Justin or Turnip Head",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/d/d9/Prince_Justin.png",
+          "img": "https://i.pinimg.com/564x/da/d0/a5/dad0a5792af6e8eb3305481227daa0eb.jpg",
           "gender": "Male",
           "age": "20-30",
           "eye_color": "Grey",
