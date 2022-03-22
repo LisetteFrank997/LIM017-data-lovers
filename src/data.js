@@ -39,7 +39,7 @@ export const sortData=(data,sortBy,sortOrder)=>{
 export const filterData=(data,condition)=>{
    
       let arr=data.filter(elem=>elem[condition[0]] == condition[1]);
-      
+      console.log(arr)
       return arr;
 };
 

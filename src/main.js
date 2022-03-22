@@ -52,7 +52,7 @@ function sideScroll(element,direction,speed,distance,step){
 
 
 function show(contentGhibli, img, back1, back2) {
-    console.log(contentGhibli);
+    
     let i = 0;
     const box = document.createElement('section');
     box.classList.add('container');
@@ -348,13 +348,50 @@ btnHuman.addEventListener('click',()=>{
     show(filterData(arr.flat(),conditionSpecies1),'img','title','specie')
 })
 
-let conditionEyesBrown = ['eye_color','Brown'];
+/*let conditionEyesBrown = ['eye_color','Brown'];
 let btnEyesBrown =document.getElementById('eyesBrown')
 btnEyesBrown.addEventListener('click', ()=>{
     let arr= [];
-    
-})
 
+})*/
+let conditionHairBrown = ['hair_color','Dark brown'];
+let btnHairBrown = document.getElementById('hairBrown');
+btnHairBrown.addEventListener('click',()=>{
+    divRoot.innerHTML=''
+   
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairBrown),'img','title','hair_color');
+})
+let conditionHairBlack = ['hair_color','Black'];
+let btnHairBlack = document.getElementById('hairBlack');
+btnHairBlack.addEventListener('click',()=>{
+    divRoot.innerHTML = '';
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairBlack),'img','title','hair_color')
+})
+let conditionHairBlonde = ['hair_color','Blonde'];
+let btnHairBlonde = document.getElementById('hairBlonde');
+btnHairBlonde.addEventListener('click',()=>{
+    
+    divRoot.innerHTML = '';
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairBlonde),'img','title','hair_color')
+})
+let conditionHairWhite = ['hair_color','White'];
+let btnHairWhite = document.getElementById('hairWhite');
+btnHairWhite.addEventListener('click',()=>{
+    
+    divRoot.innerHTML = '';
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairWhite),'img','title','hair_color')
+})
 let species=people.map(e=>e.specie);
 let arrSpecies = species.reduce((unique,item)=>unique.includes(item)?unique:[...unique,item],[]);
 
@@ -382,9 +419,10 @@ btnOthers.addEventListener("click", ()=> {
     }
 })
 
-const BTN_COMPUTE = document.getElementById('btnCompute');
+const BTN_COMPUTE = document.getElementById('btnFilterCompute');
 let computeContainer = document.getElementById('computeContainer');
 BTN_COMPUTE.addEventListener('click',()=>{
+    console.log('jkskjsjkskjjk')
     main.style.display='none';
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
