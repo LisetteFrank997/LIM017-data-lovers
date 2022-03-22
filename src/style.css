@@ -252,7 +252,8 @@ h2 {
   position: relative;
     top: 8vh;
     left: 36vw;
-}/*
+}
+
 ul, ol {
   list-style:none;
 }
@@ -273,7 +274,7 @@ button {
   width: 90px;
 }
 
-.optionBy li button:active {
+.optionBy li button:hover{
   background-color:#6eb459;
 }
 
@@ -283,12 +284,6 @@ button {
   min-width:50px;
 }
 
-.optionBy li:checked > ul {
-  display:block;
-}
-:checked ~ .btnFeatures {
-  display: block;
-}
 .optionBy li ul li {
   position:relative;
 }
@@ -331,9 +326,6 @@ width: 90px;
 height:39px;
 }
 
-.listfeatures {
-display: none;
-}*/
 #option3{
  width: 100vw;
  margin: 5vw;

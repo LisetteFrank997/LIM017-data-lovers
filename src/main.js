@@ -352,7 +352,41 @@ btnHuman.addEventListener('click',()=>{
     show(filterData(arr.flat(),conditionSpecies1),'img','title','specie')
 })
 
+let conditionEyesBrown = ['eye_color','Brown'];
+let btnEyesBrown =document.getElementById('eyesBrown')
+btnEyesBrown.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
+    let arr = [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesBrown),'img','name','eye_color');
+})
 
+let conditionEyesBlack = ['eye_color','Black'];
+let btnEyesBlack =document.getElementById('eyesBlack')
+btnEyesBlack.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
+    let arr = [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesBlack),'img','name','eye_color');
+})
+
+let conditionEyesGreen = ['eye_color','Green'];
+let btnEyesGreen =document.getElementById('eyesGreen')
+btnEyesGreen.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
+    let arr = [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesGreen),'img','name','eye_color');
+})
+
+let conditionEyesGrey = ['eye_color','Grey'];
+let btnEyesGrey =document.getElementById('eyesGrey')
+btnEyesBlack.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
+    let arr = [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesGrey),'img','name','eye_color');
+})
 let conditionHairBrown = ['hair_color','Brown'];
 let btnHairBrown = document.getElementById('hairBrown');
 btnHairBrown.addEventListener('click',()=>{
@@ -385,7 +419,7 @@ let conditionHairWhite = ['hair_color','White'];
 let btnHairWhite = document.getElementById('hairWhite');
 
 btnHairWhite.addEventListener('click',()=>{
-    
+
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let arr= [];
@@ -394,7 +428,6 @@ btnHairWhite.addEventListener('click',()=>{
 })
 let species=people.map(e=>e.specie);
 let arrSpecies = species.reduce((unique,item)=>unique.includes(item)?unique:[...unique,item],[]);
-
 let titleSpecies = "Personajes por Especies";
 let html = `<h2>${titleSpecies}</h2>`;
 for(const x of arrSpecies){
