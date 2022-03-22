@@ -352,12 +352,7 @@ btnHuman.addEventListener('click',()=>{
     show(filterData(arr.flat(),conditionSpecies1),'img','title','specie')
 })
 
-/*let conditionEyesBrown = ['eye_color','Brown'];
-let btnEyesBrown =document.getElementById('eyesBrown')
-btnEyesBrown.addEventListener('click', ()=>{
-    let arr= [];
 
-})*/
 let conditionHairBrown = ['hair_color','Brown'];
 let btnHairBrown = document.getElementById('hairBrown');
 btnHairBrown.addEventListener('click',()=>{
@@ -388,9 +383,7 @@ btnHairBlonde.addEventListener('click',()=>{
 })
 let conditionHairWhite = ['hair_color','White'];
 let btnHairWhite = document.getElementById('hairWhite');
-let arr= [];
-    data.films.forEach(e=>arr.push(e.people));
-    let arrHair=filterData(arr.flat(),conditionHairWhite);
+
 btnHairWhite.addEventListener('click',()=>{
     
     divRoot.innerHTML = '';
@@ -469,7 +462,7 @@ for (const elemento of arrValues) {
     if(elemento>5)
     {
         arrValuesProperties.push([arrProperties[j],elemento]);
-    }
+    } 
     j++;
 }
     drawGraphics(arrValuesProperties,'Color de cabello por personaje')
