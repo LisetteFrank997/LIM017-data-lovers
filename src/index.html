@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/6dead8e9d1.js" crossorigin="anonymous"></script>
+    <!--Load the AJAX API-->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
   <body >
    
@@ -86,41 +88,48 @@
       <section id="computeContainer">
         <h2>¿Quieres conocer que personajes comparten las mismas caracteristicas? 
         ¡Juega aquí!</h2>
+
         <div id="option3">
-          <ul class="optionBy">
-            <li><button class='btnCompute' id="btnEyes">Color de ojos</button>
-              <ul>
-                <li><button>brown</button></li>
-                <li><button>black</button></li>
-                <li><button>green</button></li>
+          <ul id="features">
+            <li class="titlesFeatures"><label class='labelTitle' for="btnEyes">Color de ojos</label><input type="checkbox" class='btnCompute' id="btnEyes" value="eye_color">
+              <ul class="listfeatures">
+                <li><button  class="btnFeatures" value="Brown" id="eyesBrow">cafe</button></li>
+                <li><button  class="btnFeatures" value="Black" id="eyesBlack">negro</button></li>
+                <li><button  class="btnFeatures" value="Green" id="eyesGreen">green</button></li>
+                <li><button  class="btnFeatures" value="Grey" id="eyesGrey"> grey</button></li>
               </ul>
             </li>
-            <li><button class='btnCompute' id="btnHair">Color de cabello</button>
-              <ul>
-                <li><button>brown</button></li>
-                <li><button>black</button></li>
-                <li><button>green</button></li>
+            <li class="titlesFeatures"><label class='labelTitle' for='btnHair'>Color de cabello</label><input type='checkbox' class='btnCompute' id="btnHair" value="hair_color">
+              <ul class="listfeatures">
+                <li><button  class="btnFeatures" value="Brown" id="hairBrow" >brown</button></li>
+                <li><button class="btnFeatures" value="Black" id="hairBlack">black</button></li>
+                <li><button  class="btnFeatures" value="Blonde" id="hairBlonde">blonde</button></li>
+                <li><button  class="btnFeatures" value="White" id="hairWhite">white</button></li>
+                
               </ul>
             </li>
-            <li><button class='btnCompute' id="btnSpecie">Especie</button>
-              <ul>
-                <li><button>Humanos</button></li>
-                <li><button>Animales</button></li>
-                <li><button>Magos/Brujas</button></li>
-                <li><button>Espiritus/Demonios</button></li>
+            <li class="titlesFeatures"><label class='labelTitle' for='btnSpecie'>Especie</label><input type='checkbox' class='btnCompute' id="btnSpecie" value="specie">
+              <ul class="listfeatures">
+                <li><button  class="btnFeatures" value="Human" id="Humans">Humanos</button></li>
+                <li><button  class="btnFeatures" value="Others" id="Others">Otros</button></li>
+
               </ul>
             </li>
-            <li><button class='btnCompute' id="btnGender">Género</button>
-              <ul>
-                <li><button>Femenino</button></li>
-                <li><button>Masculino</button></li>
-                <li><button>Neutro</button></li>
+            <li class="titlesFeatures"><label class='labelTitle' for='btnGender'>Género</label><input type='checkbox' class='btnCompute' id="btnGender" value="gender">
+              <ul class="listfeatures">
+                <li><button  class="btnFeatures" id="Female" value="Female" >Femenino</button></li>
+                <li><button  class="btnFeatures" id="Male" value="Male">Masculino</button></li>
+                <li><button  class="btnFeatures" id="NA" value="NA">Neutro</button></li>
               </ul>
             </li>
           </ul>
         </div>
+        <!--Div that will hold the pie chart-->
+        <div id="chart_div"></div>
       </section>
+                       
     </section>
+
     <script src="main.js" type="module"></script>
   </body>
 </html>

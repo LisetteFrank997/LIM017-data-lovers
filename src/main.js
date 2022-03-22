@@ -1,5 +1,4 @@
-import {sortData, filterData} from './data.js';
-
+import {sortData, filterData, computeStats} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const films=data.films;
@@ -266,7 +265,7 @@ let conditionDirector = ['director','Hayao Miyazaki'];
 let conditionDirector2 = ['director','Isao Takahata'];
 
 
-
+let idFilter = document.getElementById('options2')
 btnCharacter.addEventListener('click',()=>{
     main.style.display='none';
     SortFilter.style.display = 'grid';
@@ -286,7 +285,7 @@ btnCharacter.addEventListener('click',()=>{
     btnsort2Asc.value = 'ageAsc';
     btnsort2Desc.innerText = '> menores';
     btnSort3.style.display = 'none';
-    btnFilter1.innerText= 'Por genero';
+    /**btnFilter1.innerText= 'Por genero';
     btnsub1Filter1.value= 'Femenino';
     btnsub1Filter1.innerText= 'Femenino';
     btnsub2Filter1.innerText= 'Masculino';
@@ -295,7 +294,9 @@ btnCharacter.addEventListener('click',()=>{
     btnFilter2.style.display='block';
     btnFilter2.innerText= 'Por especie';
     btnsub1Filter2.innerText= 'Humanos';
-    btnsub2Filter2.innerText= 'Otros';
+    btnsub2Filter2.innerText= 'Otros';**/
+    idFilter.style.display='none';
+
 })
 let conditionGender1 = ['gender','Female'];
 btnsub1Filter1.addEventListener('click',()=>{
@@ -307,9 +308,9 @@ btnsub1Filter1.addEventListener('click',()=>{
             {
                 let arr= [];
                 data.films.forEach(e=>arr.push(e.people));
-        
-            show(filterData(arr.flat(),conditionGender1),'img','name','gender');
-            break;}
+                show(filterData(arr.flat(),conditionGender1),'img','name','gender');
+                break;
+            }
         case 'Hayao Miyazaki':
             {   
                 show(filterData(data.films,conditionDirector),'poster','title','director');
@@ -338,6 +339,7 @@ btnsub2Filter1.addEventListener('click', ()=> {
     }
    
 })
+
 let conditionGender3 = ['gender','NA'];
 btnsub3Filter1.addEventListener('click',()=>{
     divRoot.innerHTML = '';
@@ -388,6 +390,59 @@ BTN_COMPUTE.addEventListener('click',()=>{
     main.style.display='none';
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
-    computeContainer.style.display = 'block';
+    computeContainer.style.display = 'flex';
+
+    let arr1BtnFeatures = document.getElementsByClassName('btnCompute');
+    let arrValues1=[];
+    for (let i = 0; i < arr1BtnFeatures.length; i++) 
+    {
+        arr1BtnFeatures[i].addEventListener('mouseover',()=>{
+            arrValues1.push(arr1BtnFeatures[i].value);
+        })
+    }
+    console.log(arrValues1);
+    let arr2BtnFeatures = document.getElementsByClassName('btnFeatures');
+    let arrValues2=[];
+    for (let i = 0; i < arr2BtnFeatures.length; i++) 
+    {
+        arr2BtnFeatures[i].addEventListener('click',()=>{
+            arrValues2.push(arr2BtnFeatures[i].value);
+        })
+    }
+    console.log(arrValues2);
 })
 
+
+
+/*global google*/
+// Load the Visualization API and the corechart package.
+google.charts.load('current', {'packages':['corechart']});
+
+// Set a callback to run when the Google Visualization API is loaded.
+google.charts.setOnLoadCallback(drawChart);
+
+// Callback that creates and populates a data table,
+// instantiates the pie chart, passes in the data and
+// draws it.
+function drawChart() {
+
+  // Create the data table.
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Topping');
+  data.addColumn('number', 'Slices');
+  data.addRows([
+    ['Mushrooms', 2],
+    ['Onions', 2],
+    ['Olives', 2],
+    ['Zucchini', 2],
+    ['Pepperoni', 2]
+  ]);
+
+  // Set chart options
+  var options = {'title':'How Much Pizza I Ate Last Night',
+                 'width':400,
+                 'height':300};
+
+  // Instantiate and draw our chart, passing in some options.
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  chart.draw(data, options);}
