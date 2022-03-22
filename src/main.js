@@ -472,7 +472,7 @@ for (const elemento of arrValues) {
     }
     j++;
 }
-drawGraphics(arrValuesProperties,'Color de cabello por personaje')
+    drawGraphics(arrValuesProperties,'Color de cabello por personaje')
 })
 
 
@@ -500,7 +500,7 @@ function drawChart() {
   // Set chart options
   var options = {'title':titleGraphic,
                  'width':900,
-                 'height':1000,
+                 'height':600,
                 };
 
   // Instantiate and draw our chart, passing in some options.
