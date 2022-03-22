@@ -436,6 +436,7 @@ btnHairBlonde.addEventListener('click',()=>{
 })
 let conditionHairWhite = ['hair_color','White'];
 let btnHairWhite = document.getElementById('hairWhite');
+
 btnHairWhite.addEventListener('click',()=>{
 
     divRoot.innerHTML = '';
@@ -444,6 +445,43 @@ btnHairWhite.addEventListener('click',()=>{
     data.films.forEach(e=>arr.push(e.people));
     show(filterData(arr.flat(),conditionHairWhite),'img','title','hair_color')
 })
+
+let conditionHairGrey = ['hair_color','Grey'];
+let btnHairGrey = document.getElementById('hairGrey');
+
+btnHairGrey.addEventListener('click',()=>{
+
+    divRoot.innerHTML = '';
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairGrey),'img','title','hair_color')
+})
+
+let conditionHairRed = ['hair_color','Red'];
+let btnHairRed = document.getElementById('hairRed');
+
+btnHairRed.addEventListener('click',()=>{
+
+    divRoot.innerHTML = '';
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairRed),'img','title','hair_color')
+})
+
+let conditionHairLightBrown = ['hair_color','Light brown'];
+let btnHairLightBrown = document.getElementById('hairLightBrown');
+
+btnHairLightBrown.addEventListener('click',()=>{
+
+    divRoot.innerHTML = '';
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairLightBrown),'img','title','hair_color')
+})
+
 let species=people.map(e=>e.specie);
 let arrSpecies = species.reduce((unique,item)=>unique.includes(item)?unique:[...unique,item],[]);
 let titleSpecies = "Personajes por Especies";
@@ -452,6 +490,24 @@ for(const x of arrSpecies){
     html += `<button class='btnSpecie' value='${x}'>${x}</button>`;
 }
 
+let btnSpecie = document.getElementById('btnSpecie');
+btnSpecie.addEventListener('click',()=>{
+    let arrSpecie=people.map(e=>e.specie);
+    let objFeatures=computeStats(arrSpecie);
+    console.log(objFeatures)
+    let arrValues=Object.values(objFeatures);
+    let arrProperties =Object.keys(objFeatures);
+    let arrValuesProperties=[];
+    let j=0;
+    for (const elemento of arrValues) {
+        if(elemento>2)
+        {
+            arrValuesProperties.push([arrProperties[j],elemento]);
+        } 
+        j++;
+    }
+    drawGraphics(arrValuesProperties,'Especies de Studio Ghibli')
+})
 
 let boxSpecies=document.getElementById('boxSpecies');
 let btnOthers = document.getElementById('Others');
@@ -459,6 +515,7 @@ let btnOthers = document.getElementById('Others');
 btnOthers.addEventListener("click", ()=> {
     boxSpecies.innerHTML=html;
     divRoot.innerHTML = '';
+    divRoot.style.marginTop='133px';
     let btns = document.getElementsByClassName('btnSpecie');
 
     for (let i = 0; i < btns.length; i++) {
@@ -466,7 +523,7 @@ btnOthers.addEventListener("click", ()=> {
         btns[i].addEventListener("click", ()=>{
         let condition=['specie',btns[i].value];
         let arr=filterData(people,condition);
-        boxSpecies.innerHTML='';
+        divRoot.innerHTML = '';
         show(arr,'img','name','specie');
         });
     }
@@ -513,7 +570,7 @@ for (const elemento of arrValues) {
     if(elemento>5)
     {
         arrValuesProperties.push([arrProperties[j],elemento]);
-    }
+    } 
     j++;
 }
     drawGraphics(arrValuesProperties,'Color de cabello por personaje')
