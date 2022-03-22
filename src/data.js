@@ -39,17 +39,24 @@ export const sortData=(data,sortBy,sortOrder)=>{
 export const filterData=(data,condition)=>{
    
       let arr=data.filter(elem=>elem[condition[0]] == condition[1]);
-      
+     
       return arr;
 };
 
-export const computeStats=(data,arrCondition)=>{
+export const computeStats=(dataFeatures)=>{
+  
 
-  let firstCondition=filterData(data,arrCondition[0]);
-  let secondCondition=filterData(firstCondition,arrCondition[1]);
-  let thirdCondition = filterData(secondCondition,arrCondition[2]);
-  let fourthCondition=filterData(thirdCondition,arrCondition[3]);
-  console.log('filtro de condiciones:',fourthCondition);
-  return fourthCondition;
+let countedNames = dataFeatures.reduce(function (allFeatures, feature) {
+  if (feature in allFeatures) {
+    allFeatures[feature]++
+  }
+  else {
+    allFeatures[feature] = 1
+  }
+  return allFeatures
+}, {})
+return countedNames;
+
+  console.log('colores de cabello',countedNames)
 };
 

@@ -24,7 +24,7 @@
         </div>
         <button class="btnMain" id="btnFilm">Películas</button>
         <button class="btnMain" id="btnCharacter">Personajes</button>
-        <button class="btnMain" id="btnCompute">Estadisticas</button>
+        <button class="btnMain" id="btnFilterCompute">Estadisticas</button>
         <button id="forward"><i class="fa-solid fa-circle-chevron-right"></i></button>
         <button id="back"><i class="fa-solid fa-circle-chevron-left"></i></button>
         <section id="carrouselFilms">
@@ -82,7 +82,7 @@
         </did>
       </section>
       
-      <div id="root"></div>
+      
       <section id="computeContainer">
         <h2>¿Quieres conocer que personajes comparten las mismas caracteristicas? 
         ¡Juega aquí!</h2>
@@ -93,13 +93,13 @@
               <ul class="listfeatures">
                 <li><button  class="btnFeatures" value="Brown" id="eyesBrown">cafe</button></li>
                 <li><button  class="btnFeatures" value="Black" id="eyesBlack">negro</button></li>
-                <li><button  class="btnFeatures" value="Green" id="eyesGreen">green</button></li>
-                <li><button  class="btnFeatures" value="Grey" id="eyesGrey"> grey</button></li>
+                <li><button  class="btnFeatures" value="Green" id="eyesGreen">verde</button></li>
+                <li><button  class="btnFeatures" value="Grey" id="eyesGrey"> gris</button></li>
               </ul>
             </li>
             <li class="titlesFeatures"><label class='labelTitle' for='btnHair'>Color de cabello</label><input type='checkbox' class='btnCompute' id="btnHair" value="hair_color">
               <ul class="listfeatures">
-                <li><button  class="btnFeatures" value="Brown" id="hairBrow" >brown</button></li>
+                <li><button  class="btnFeatures" value="Brown" id="hairBrown" >brown</button></li>
                 <li><button class="btnFeatures" value="Black" id="hairBlack">black</button></li>
                 <li><button  class="btnFeatures" value="Blonde" id="hairBlonde">blonde</button></li>
                 <li><button  class="btnFeatures" value="White" id="hairWhite">white</button></li>
@@ -130,7 +130,7 @@
       </section>
                        
     </section>
-
+    <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
