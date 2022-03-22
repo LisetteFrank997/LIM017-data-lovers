@@ -356,6 +356,21 @@ btnsub1Filter2.addEventListener('click',()=>{
 })
 let species=people.map(e=>e.specie);
 let arrSpecies = species.reduce((unique,item)=>unique.includes(item)?unique:[...unique,item],[]);
+let arr = [];
+const SpecieAll = data.films.forEach(e=>arr.push(e.specie));
+console.log(SpecieAll);
+
+/*let conditionSpeciesForItem = ['specie', 'Witch/Human']
+let arrAnimals= 
+let animals =document.getElementById('animals');
+animals.addEventListener('click', ()=>{
+   et arrAnimals= []
+   data.films.forEach(e=>arrAnimals.push(e.people));
+   
+
+})
+animals.value.add= ''*/
+
 
 let titleSpecies = "Personajes por Especies";
 let html = `<h2>${titleSpecies}</h2>`;
@@ -390,4 +405,3 @@ BTN_COMPUTE.addEventListener('click',()=>{
     boxSpecies.innerHTML = '';
     computeContainer.style.display = 'block';
 })
-
