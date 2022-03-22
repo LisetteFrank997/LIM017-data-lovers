@@ -299,63 +299,62 @@ btnCharacter.addEventListener('click',()=>{
 
 })
 let conditionGender1 = ['gender','Female'];
+let btnFemale = document.getElementById('Female');
+btnFemale.addEventListener('click', ()=>{
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionGender1),'img','name','gender');
+  
+})
+
 btnsub1Filter1.addEventListener('click',()=>{
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
-    switch(btnsub1Filter1.getAttribute('value'))
-    {
-        case 'Femenino':
-            {
-                let arr= [];
-                data.films.forEach(e=>arr.push(e.people));
-                show(filterData(arr.flat(),conditionGender1),'img','name','gender');
-                break;
-            }
-        case 'Hayao Miyazaki':
-            {   
-                show(filterData(data.films,conditionDirector),'poster','title','director');
-                break;
-            }
-    }
+   show(filterData(data.films,conditionDirector),'poster','title','director');
+     
 })
+
 let conditionGender2 = ['gender','Male'];
+let btnMale= document.getElementById('Male');
+btnMale.addEventListener('click', ()=>{
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionGender2),'img','name','gender');
+})
+
 btnsub2Filter1.addEventListener('click', ()=> {
     divRoot.innerHTML ='';
     boxSpecies.innerHTML = '';
-    switch(btnsub2Filter1.getAttribute('value'))
-    {
-        case 'Masculino':
-            {
-                let arr= [];
-                data.films.forEach(e=>arr.push(e.people));
-        
-            show(filterData(arr.flat(),conditionGender2),'img','name','gender');
-            break;}
-        case 'Isao Takahata':
-            {   
-                show(filterData(data.films,conditionDirector2),'poster','title','director')
-                break;
-            }
-    }
-   
+    show(filterData(data.films,conditionDirector2),'poster','title','director');
 })
 
 let conditionGender3 = ['gender','NA'];
-btnsub3Filter1.addEventListener('click',()=>{
-    divRoot.innerHTML = '';
+let btnNeutror = document.getElementById('NA')
+btnNeutror.addEventListener('click',()=>{
     boxSpecies.innerHTML = '';
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
     show(filterData(arr.flat(),conditionGender3),'img','name','gender');
 })
+
 let conditionSpecies1 = ['specie','Human'];
-btnsub1Filter2.addEventListener('click',()=>{
-    divRoot.innerHTML = '';
+let btnHuman = document.getElementById('Humans')
+btnHuman.addEventListener('click',()=>{
     boxSpecies.innerHTML = '';
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
     show(filterData(arr.flat(),conditionSpecies1),'img','title','specie')
 })
+
+let conditionEyesBrown = ['eye_color','Brown'];
+let btnEyesBrown =document.getElementById('eyesBrown')
+btnEyesBrown.addEventListener('click', ()=>{
+    let arr= [];
+    
+})
+
 let species=people.map(e=>e.specie);
 let arrSpecies = species.reduce((unique,item)=>unique.includes(item)?unique:[...unique,item],[]);
 
@@ -367,10 +366,9 @@ for(const x of arrSpecies){
 
 
 let boxSpecies=document.getElementById('boxSpecies');
-
-btnsub2Filter2.addEventListener("click", ()=> {
+let btnOthers = document.getElementById('Others');
+btnOthers.addEventListener("click", ()=> {
     boxSpecies.innerHTML=html;
-    divRoot.innerHTML ='';
     let btns = document.getElementsByClassName('btnSpecie');
 
     for (let i = 0; i < btns.length; i++) {
