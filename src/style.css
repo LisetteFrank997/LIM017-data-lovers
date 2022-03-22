@@ -325,9 +325,7 @@ button {
   background-color: #449ed1;
 }
 
-#option3{
-  height: 200px;
-}
+
 .btnCompute {
 width: 90px;
 height:39px;
@@ -336,6 +334,10 @@ height:39px;
 .listfeatures {
 display: none;
 }*/
+#option3{
+ width: 100vw;
+ margin: 5vw;
+}
 #computeContainer{
   display: none;
   flex-wrap: wrap;
@@ -352,19 +354,21 @@ display: none;
 .titlesFeatures {
   
   list-style: none;
-  width: 128px;
+  width: 20%;
   text-align: center;
 }
-#features{
-  display: flex;
 
-}
 .btnFeatures{
 background-color: #b0cedd;
 color: #fff;
   border:none;
   height: 32px;
-  width: 131px;
+  width: 100%;
+}
+#features{
+  display: flex;
+  justify-content: center;
+
 }
 li{
   list-style: none;
@@ -468,5 +472,17 @@ li{
 }
 .target{
   margin-top: 40%;
+}
+.titlesFeatures {
+  
+ 
+  width: 30%;
+ 
+}
+
+.btnFeatures{
+
+  height: 32px;
+  width: 100%;
 }
 }
