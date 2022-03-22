@@ -358,6 +358,7 @@ btnEyesBrown.addEventListener('click', ()=>{
     divRoot.innerHTML = '';
     let arr = [];
     data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesBrown),'img','name','eye_color');
 })
 
 let conditionEyesBlack = ['eye_color','Black'];
@@ -380,12 +381,31 @@ btnEyesGreen.addEventListener('click', ()=>{
 
 let conditionEyesGrey = ['eye_color','Grey'];
 let btnEyesGrey =document.getElementById('eyesGrey')
-btnEyesBlack.addEventListener('click', ()=>{
+btnEyesGrey.addEventListener('click', ()=>{
     divRoot.innerHTML = '';
     let arr = [];
     data.films.forEach(e=>arr.push(e.people));
     show(filterData(arr.flat(),conditionEyesGrey),'img','name','eye_color');
 })
+
+let conditionEyesDbrown = ['eye_color','Dark Brown'];
+let btnEyesDbrown =document.getElementById('eyesDbrown')
+btnEyesDbrown.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
+    let arr = [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesDbrown),'img','name','eye_color');
+})
+
+let conditionEyesBlue = ['eye_color','Blue'];
+let btnEyesBlue =document.getElementById('eyesBlue')
+btnEyesBlue.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
+    let arr = [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesBlue),'img','name','eye_color');
+})
+
 let conditionHairBrown = ['hair_color','Brown'];
 let btnHairBrown = document.getElementById('hairBrown');
 btnHairBrown.addEventListener('click',()=>{
@@ -497,6 +517,42 @@ for (const elemento of arrValues) {
     j++;
 }
     drawGraphics(arrValuesProperties,'Color de cabello por personaje')
+})
+
+let btnEyesColor= document.getElementById('btnEyes');
+btnEyesColor.addEventListener('click', ()=>{
+    let arrEyesColor=people.map(e=>e.eye_color);
+let objFeatures=computeStats(arrEyesColor);
+let arrValues=Object.values(objFeatures);
+let arrProperties =Object.keys(objFeatures);
+let arrValuesProperties=[];
+let j=0;
+for (const elemento of arrValues) {
+    if(elemento>=3)
+    {
+        arrValuesProperties.push([arrProperties[j],elemento]);
+    }
+    j++;
+}
+    drawGraphics(arrValuesProperties,'Color de ojos por personaje')
+})
+
+let btnGender= document.getElementById('btnGender');
+btnGender.addEventListener('click', ()=>{
+    let arrGender=people.map(e=>e.gender);
+let objFeatures=computeStats(arrGender);
+let arrValues=Object.values(objFeatures);
+let arrProperties =Object.keys(objFeatures);
+let arrValuesProperties=[];
+let j=0;
+for (const elemento of arrValues) {
+    if(elemento>=2)
+    {
+        arrValuesProperties.push([arrProperties[j],elemento]);
+    }
+    j++;
+}
+    drawGraphics(arrValuesProperties,'Personajes por genero')
 })
 
 
