@@ -52,7 +52,7 @@ function sideScroll(element,direction,speed,distance,step){
 
 
 function show(contentGhibli, img, back1, back2) {
-    console.log(contentGhibli);
+    
     let i = 0;
     const box = document.createElement('section');
     box.classList.add('container');
@@ -301,6 +301,7 @@ btnCharacter.addEventListener('click',()=>{
 let conditionGender1 = ['gender','Female'];
 let btnFemale = document.getElementById('Female');
 btnFemale.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
@@ -318,6 +319,7 @@ btnsub1Filter1.addEventListener('click',()=>{
 let conditionGender2 = ['gender','Male'];
 let btnMale= document.getElementById('Male');
 btnMale.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
@@ -333,6 +335,7 @@ btnsub2Filter1.addEventListener('click', ()=> {
 let conditionGender3 = ['gender','NA'];
 let btnNeutror = document.getElementById('NA')
 btnNeutror.addEventListener('click',()=>{
+    divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
@@ -342,19 +345,60 @@ btnNeutror.addEventListener('click',()=>{
 let conditionSpecies1 = ['specie','Human'];
 let btnHuman = document.getElementById('Humans')
 btnHuman.addEventListener('click',()=>{
+    divRoot.innerHTML=''
     boxSpecies.innerHTML = '';
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
     show(filterData(arr.flat(),conditionSpecies1),'img','title','specie')
 })
 
-let conditionEyesBrown = ['eye_color','Brown'];
+/*let conditionEyesBrown = ['eye_color','Brown'];
 let btnEyesBrown =document.getElementById('eyesBrown')
 btnEyesBrown.addEventListener('click', ()=>{
     let arr= [];
-    
-})
 
+})*/
+let conditionHairBrown = ['hair_color','Brown'];
+let btnHairBrown = document.getElementById('hairBrown');
+btnHairBrown.addEventListener('click',()=>{
+    divRoot.innerHTML=''
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairBrown),'img','title','hair_color');
+})
+let conditionHairBlack = ['hair_color','Black'];
+let btnHairBlack = document.getElementById('hairBlack');
+btnHairBlack.addEventListener('click',()=>{
+    divRoot.innerHTML = '';
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairBlack),'img','title','hair_color')
+})
+let conditionHairBlonde = ['hair_color','Blonde'];
+let btnHairBlonde = document.getElementById('hairBlonde');
+btnHairBlonde.addEventListener('click',()=>{
+    
+    divRoot.innerHTML = '';
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairBlonde),'img','title','hair_color')
+})
+let conditionHairWhite = ['hair_color','White'];
+let btnHairWhite = document.getElementById('hairWhite');
+let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    let arrHair=filterData(arr.flat(),conditionHairWhite);
+btnHairWhite.addEventListener('click',()=>{
+    
+    divRoot.innerHTML = '';
+    boxSpecies.innerHTML = '';
+    let arr= [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionHairWhite),'img','title','hair_color')
+})
 let species=people.map(e=>e.specie);
 let arrSpecies = species.reduce((unique,item)=>unique.includes(item)?unique:[...unique,item],[]);
 
@@ -367,8 +411,10 @@ for(const x of arrSpecies){
 
 let boxSpecies=document.getElementById('boxSpecies');
 let btnOthers = document.getElementById('Others');
+
 btnOthers.addEventListener("click", ()=> {
     boxSpecies.innerHTML=html;
+    divRoot.innerHTML = '';
     let btns = document.getElementsByClassName('btnSpecie');
 
     for (let i = 0; i < btns.length; i++) {
@@ -382,9 +428,10 @@ btnOthers.addEventListener("click", ()=> {
     }
 })
 
-const BTN_COMPUTE = document.getElementById('btnCompute');
+const BTN_COMPUTE = document.getElementById('btnFilterCompute');
 let computeContainer = document.getElementById('computeContainer');
 BTN_COMPUTE.addEventListener('click',()=>{
+  
     main.style.display='none';
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
@@ -398,7 +445,7 @@ BTN_COMPUTE.addEventListener('click',()=>{
             arrValues1.push(arr1BtnFeatures[i].value);
         })
     }
-    console.log(arrValues1);
+  
     let arr2BtnFeatures = document.getElementsByClassName('btnFeatures');
     let arrValues2=[];
     for (let i = 0; i < arr2BtnFeatures.length; i++) 
@@ -407,11 +454,31 @@ BTN_COMPUTE.addEventListener('click',()=>{
             arrValues2.push(arr2BtnFeatures[i].value);
         })
     }
-    console.log(arrValues2);
+   
+})
+
+let btnHairColor = document.getElementById('btnHair');
+btnHairColor.addEventListener('click', ()=>{
+    let arrHairColor=people.map(e=>e.hair_color);
+let objFeatures=computeStats(arrHairColor);
+let arrValues=Object.values(objFeatures);
+let arrProperties =Object.keys(objFeatures);
+let arrValuesProperties=[];
+let j=0;
+for (const elemento of arrValues) {
+    if(elemento>5)
+    {
+        arrValuesProperties.push([arrProperties[j],elemento]);
+    }
+    j++;
+}
+    drawGraphics(arrValuesProperties,'Color de cabello por personaje')
 })
 
 
 
+
+function drawGraphics(arrStadistic,titleGraphic){
 /*global google*/
 // Load the Visualization API and the corechart package.
 google.charts.load('current', {'packages':['corechart']});
@@ -428,19 +495,16 @@ function drawChart() {
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Topping');
   data.addColumn('number', 'Slices');
-  data.addRows([
-    ['Mushrooms', 2],
-    ['Onions', 2],
-    ['Olives', 2],
-    ['Zucchini', 2],
-    ['Pepperoni', 2]
-  ]);
+  data.addRows(arrStadistic);
 
   // Set chart options
-  var options = {'title':'How Much Pizza I Ate Last Night',
-                 'width':400,
-                 'height':300};
+  var options = {'title':titleGraphic,
+                 'width':900,
+                 'height':600,
+                };
 
   // Instantiate and draw our chart, passing in some options.
   var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
   chart.draw(data, options);}
+}
+

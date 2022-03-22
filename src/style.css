@@ -9,7 +9,7 @@
 #btnCharacter {
   width: 120px;
 }
-#btnCompute {
+#btnFilterCompute {
   width: 120px;
 }
 
@@ -87,7 +87,7 @@ input[type=radio]{
   grid-row: 7;
   width: 120px;
 }
-#btnCompute {
+#btnFilterCompute {
   grid-column: 4/ span 2;
   grid-row: 9;
   width: 120px;
@@ -139,11 +139,11 @@ li{
 
 .container{   
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+
   width: 100vw;
   height: auto;
-  margin-top: 120px;
+  
 }
 
 
@@ -165,16 +165,16 @@ h2 {
 }
 
 .target-box {
-  background-image: url('img/tarjetaS.svg');
+  
   background-repeat: no-repeat;
   background-position: center;
-    flex: 100%;
+   
     display: flex;
     justify-content: center;
     height: 40vh;
     position: relative;
     perspective: 1000px;
-    margin-bottom: 55%;
+    
     
   }
   
@@ -190,7 +190,7 @@ h2 {
     transform-style: preserve-3d;
     transition: all 0.5s linear;
     width: 43%;
-    margin-top: 26%;
+ 
     height: 22vh;
   }
   
@@ -212,8 +212,8 @@ h2 {
   }
   .poster{
   display: flex;
-  width:100%;
-  height:100%;
+  width: 200px;
+  height: 220px;
   position: relative;
   }
  
@@ -325,9 +325,7 @@ button {
   background-color: #449ed1;
 }
 
-#option3{
-  height: 200px;
-}
+
 .btnCompute {
 width: 90px;
 height:39px;
@@ -336,6 +334,10 @@ height:39px;
 .listfeatures {
 display: none;
 }*/
+#option3{
+ width: 100vw;
+ margin: 5vw;
+}
 #computeContainer{
   display: none;
   flex-wrap: wrap;
@@ -352,19 +354,21 @@ display: none;
 .titlesFeatures {
   
   list-style: none;
-  width: 128px;
+  width: 20%;
   text-align: center;
 }
-#features{
-  display: flex;
 
-}
 .btnFeatures{
 background-color: #b0cedd;
 color: #fff;
   border:none;
   height: 32px;
-  width: 131px;
+  width: 100%;
+}
+#features{
+  display: flex;
+  justify-content: center;
+
 }
 li{
   list-style: none;
@@ -383,7 +387,7 @@ li{
   #btnCharacter {
     width: 250px;
   }
-  #btnCompute {
+  #btnFilterCompute {
     width: 250px;
   }
   #forward{
@@ -391,12 +395,14 @@ li{
   }
 
   .target-box{
-    flex: 20%;
+   
     height: 38vh;
-    margin: 9vh;
+    width: 22%;
   }
   .container{   
-    margin-top: 169px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   #logo {
@@ -466,5 +472,17 @@ li{
 }
 .target{
   margin-top: 40%;
+}
+.titlesFeatures {
+  
+ 
+  width: 30%;
+ 
+}
+
+.btnFeatures{
+
+  height: 32px;
+  width: 100%;
 }
 }
