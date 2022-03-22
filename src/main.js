@@ -301,6 +301,7 @@ btnCharacter.addEventListener('click',()=>{
 let conditionGender1 = ['gender','Female'];
 let btnFemale = document.getElementById('Female');
 btnFemale.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
@@ -318,6 +319,7 @@ btnsub1Filter1.addEventListener('click',()=>{
 let conditionGender2 = ['gender','Male'];
 let btnMale= document.getElementById('Male');
 btnMale.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
@@ -333,6 +335,7 @@ btnsub2Filter1.addEventListener('click', ()=> {
 let conditionGender3 = ['gender','NA'];
 let btnNeutror = document.getElementById('NA')
 btnNeutror.addEventListener('click',()=>{
+    divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
@@ -342,6 +345,7 @@ btnNeutror.addEventListener('click',()=>{
 let conditionSpecies1 = ['specie','Human'];
 let btnHuman = document.getElementById('Humans')
 btnHuman.addEventListener('click',()=>{
+    divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
@@ -351,8 +355,37 @@ btnHuman.addEventListener('click',()=>{
 let conditionEyesBrown = ['eye_color','Brown'];
 let btnEyesBrown =document.getElementById('eyesBrown')
 btnEyesBrown.addEventListener('click', ()=>{
-    let arr= [];
-    
+    divRoot.innerHTML = '';
+    let arr = [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesBrown),'img','name','eye_color');
+})
+
+let conditionEyesBlack = ['eye_color','Black'];
+let btnEyesBlack =document.getElementById('eyesBlack')
+btnEyesBlack.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
+    let arr = [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesBlack),'img','name','eye_color');
+})
+
+let conditionEyesGreen = ['eye_color','Green'];
+let btnEyesGreen =document.getElementById('eyesGreen')
+btnEyesGreen.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
+    let arr = [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesGreen),'img','name','eye_color');
+})
+
+let conditionEyesGrey = ['eye_color','Grey'];
+let btnEyesGrey =document.getElementById('eyesGrey')
+btnEyesBlack.addEventListener('click', ()=>{
+    divRoot.innerHTML = '';
+    let arr = [];
+    data.films.forEach(e=>arr.push(e.people));
+    show(filterData(arr.flat(),conditionEyesGrey),'img','name','eye_color');
 })
 
 let species=people.map(e=>e.specie);
