@@ -43,4 +43,13 @@ export const filterData=(data,condition)=>{
       return arr;
 };
 
+export const computeStats=(data,arrCondition)=>{
+
+  let firstCondition=filterData(data,arrCondition[0]);
+  let secondCondition=filterData(firstCondition,arrCondition[1]);
+  let thirdCondition = filterData(secondCondition,arrCondition[2]);
+  let fourthCondition=filterData(thirdCondition,arrCondition[3]);
+  console.log('filtro de condiciones:',fourthCondition);
+  return fourthCondition;
+};
 
