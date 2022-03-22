@@ -99,7 +99,7 @@ input[type=radio]{
 }
 
 ul{
-  color: white;
+  color: rgb(0, 0, 0);
 }
 header{
   grid-column: 7/span 2;
@@ -161,6 +161,7 @@ h2 {
   color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  font-size: 19px;
 }
 
 .target-box {
@@ -251,7 +252,7 @@ h2 {
   position: relative;
     top: 8vh;
     left: 36vw;
-}
+}/*
 ul, ol {
   list-style:none;
 }
@@ -272,7 +273,7 @@ button {
   width: 90px;
 }
 
-.optionBy li button:hover {
+.optionBy li button:active {
   background-color:#6eb459;
 }
 
@@ -282,10 +283,12 @@ button {
   min-width:50px;
 }
 
-.optionBy li:hover > ul {
+.optionBy li:checked > ul {
   display:block;
 }
-
+:checked ~ .btnFeatures {
+  display: block;
+}
 .optionBy li ul li {
   position:relative;
 }
@@ -321,8 +324,56 @@ button {
 #secondPage{
   background-color: #449ed1;
 }
+
+#option3{
+  height: 200px;
+}
+.btnCompute {
+width: 90px;
+height:39px;
+}
+
+.listfeatures {
+display: none;
+}*/
 #computeContainer{
   display: none;
+  flex-wrap: wrap;
+}
+.listfeatures{
+  display: none;
+}
+.btnCompute{
+  display: none;
+}
+.btnCompute:checked + .listfeatures{
+  display: block;
+}
+.titlesFeatures {
+  
+  list-style: none;
+  width: 128px;
+  text-align: center;
+}
+#features{
+  display: flex;
+
+}
+.btnFeatures{
+background-color: #b0cedd;
+color: #fff;
+  border:none;
+  height: 32px;
+  width: 131px;
+}
+li{
+  list-style: none;
+}
+.labelTitle {
+  background: #6591A7;
+  color: #fff;
+  height: 25px;
+  display: block;
 }
 @media only screen and (min-width: 768px){
 
