@@ -1,5 +1,52 @@
 # Data Lovers
 
+## Studio Ghibli
+
+### Introducción
+ ¡Hola, bienvenidos a Data Lovers Ghibli Edition ! Nuestro equipo esta conformado por Jaqueline Rocio Ramos Vargas y Lisette Frank Sandoval. 
+ Desarrollamos este proyecto con el objetivo de mostrar datos curiosos e información relevante a los usuarios fanaticos de las películas de Studio Ghibli.
+ 
+### Investigación UX
+
+Para crear nuestra web necesitabamos conocer más sobre los usuarios, sus intereses  y  necesidades a satisfacer. Por lo cual , investigamos a través de información en la web, entrevistas personales y una encuesta. 
+Concluímos lo siguiente:
+
+**Usuarios:** Fanáticos de Studio Ghibli, hombres y mujeres  de 21 a 23 años (50%).
+
+**Objetivos de los usuarios:** Encontrar los datos de las películas (año de estreno, popularidad, sinopsis), y caracteristicas de los personajes, también datos curiosos o peculiaridades sobre las películas.
+
+**Solución que les brinda a los usuarios:**
+-Satisfacer su curiosidad por encontrar informacion organizada sobre Studio Ghibli.
+-Descubrir datos nuevos o curiosos sobre las películas y personajes.
+-Experimentar una visita interactiva y visualmente agradable
+
+### Encuesta
+La encuesta fue aplicada a una muestra de  29 personas , hombres y mujeres de 21- a más 26 años, fanaticos de las películas de Studio Ghibli.
+Acontinuación mostramos los resultados:
+
+### Historias de Usuario
+Luego de procesar la información de la encuesta y la investigación, concluimos las siguientes historias de usuario:
+
+**HU1:** Yo como usuario quiero visualizar películas para saber cuantas películas tiene Studio Ghibli.
+
+**HU2:** Yo como usuario quiero ordenar y filtrar las películas, para encontrarlas facilmente.
+
+**HU3: **Yo como usuario quiero ver los personajes de las películas para conocer más sobre ellos.
+
+**HU4:** Yo como usuario quiero ordenar y filtrar los personajes para conocer más detalles sobre ellos.
+
+**HU5: **Yo como usuario quiero calcular el porcentaje de personajes con caracteristicas similares para compararlos.
+
+### Boceto
+![](src/img/boceto.PNG)
+### Prototipo de alta fidelidad
+![](src/img/figma.PNG)
+### Proyecto Final
+![](src/img/portada.PNG)
+![](src/img/portadaMobile.PNG)
+![](src/img/Peliculas.PNG)
+![](src/img/peliculasMobile.PNG)
+![](src/img/Estadisticas.png)
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
