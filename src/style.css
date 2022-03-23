@@ -143,8 +143,6 @@ li{
 .container{   
   display: flex;
   flex-direction: column;
-  position:relative;
-  top: 239px;
   width: 100vw;
   height: auto;
   
