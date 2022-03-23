@@ -57,6 +57,6 @@ let countedNames = dataFeatures.reduce(function (allFeatures, feature) {
 }, {})
 return countedNames;
 
-  console.log('colores de cabello',countedNames)
+ 
 };
 

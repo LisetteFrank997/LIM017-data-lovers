@@ -126,6 +126,8 @@ header{
 .homeIcon{
   width: 5vw;
   height: auto;
+  position: relative;
+    right: 45vw;
 }
 
 
@@ -143,7 +145,10 @@ li{
 .container{   
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  position:relative;
+  top: 239px;
+  width: 55vw;
+  margin-bottom: 12%;
   height: auto;
   
 }
@@ -181,7 +186,7 @@ h2 {
     height: 40vh;
     position: relative;
     perspective: 1000px;
-    
+    margin-bottom: 31%;
     
   }
   
@@ -259,7 +264,7 @@ h2 {
   width:100px;
   font-family:'Open Sans';
   position: relative;
-  top: 14vh;
+  top: 32vh;
   left: 17vw;
 }
 #options2 {
@@ -267,7 +272,7 @@ h2 {
   width:100px;
   font-family:'Open Sans';
   position: relative;
-  top: 14vh;
+  top: 32vh;
   left: 27vw;
 }
 
@@ -339,7 +344,6 @@ button {
 }
 #secondPage{
   display: block;
-  
 }
 .btnCompute {
 width: 90px;
@@ -404,6 +408,13 @@ li{
   margin: 5%;
   width: 100vw;
 }
+.homeCompute
+{
+  width: 6vw;
+    height: 65px;
+    position: relative;
+    right: 2vw;
+}
 @media only screen and (min-width: 768px){
 
   #btnFilm {
@@ -431,7 +442,8 @@ li{
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    top: 199px;
+    top: 153px;
+    width: 100vw;
   }
 
   #logo {
@@ -456,33 +468,19 @@ li{
     margin:auto;
     width:500px;
     position: relative;
-    top: 168px;
+    top: 303px;
     left: 30vw;
   }
   #options2 {
     margin:auto;
     width:500px;
     position: relative;
-    top: 22vh;
+    top: 303px;
     left: 49vw;
   }
-  .subtitles { 
-    font-size: 31px;
-    position: relative;
-    top: 51px;
-    left: 490px;
-  }
+
   .titles {
     font-size: 54px;
-    position: relative;
-    top: 48px;
-    left: 228px;
-  }
-  .titlesCha{
-    position: relative;
-    top: 30px;
-    left: 318px;
-    
   }
 
   .optionBy li button{
