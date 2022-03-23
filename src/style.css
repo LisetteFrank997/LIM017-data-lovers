@@ -12,6 +12,9 @@
 #btnFilterCompute {
   width: 120px;
 }
+body{
+  background: lightblue;
+}
 
 main{
 
@@ -140,7 +143,8 @@ li{
 .container{   
   display: flex;
   flex-direction: column;
-
+  position:relative;
+  top: 239px;
   width: 100vw;
   height: auto;
   
@@ -157,6 +161,8 @@ li{
   text-align: center;
   backface-visibility: hidden;
 }
+
+
 h2 {
   color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
@@ -229,29 +235,23 @@ h2 {
 }
 #SortFilter{
   display: none;
-  
-  grid-template-columns: repeat(7,10%);
-  grid-template-rows: repeat(3,30%);
+
 }
-#options {
-  grid-column: 3;
-  grid-row: 2;
+#options {   
   margin:auto;
   width:100px;
   font-family:'Open Sans';
   position: relative;
-    top: 8vh;
-    left: 30vw;
+  top: 14vh;
+  left: 17vw;
 }
 #options2 {
-  grid-column: 5;
-  grid-row: 2;
   margin:auto;
   width:100px;
   font-family:'Open Sans';
   position: relative;
-    top: 8vh;
-    left: 36vw;
+  top: 14vh;
+  left: 27vw;
 }
 
 ul, ol {
@@ -274,7 +274,7 @@ button {
   width: 90px;
 }
 
-.optionBy li button:hover{
+.optionBy li button:hover {
   background-color:#6eb459;
 }
 
@@ -284,7 +284,7 @@ button {
   min-width:50px;
 }
 
-.optionBy button:hover > ul {
+.optionBy li:hover > ul {
   display:block;
 }
 
@@ -320,11 +320,6 @@ button {
   flex: 100%;
   text-align: center;
 }
-#secondPage{
-  background-color: #449ed1;
-}
-
-
 .btnCompute {
 width: 90px;
 height:39px;
@@ -389,6 +384,7 @@ li{
   #forward{
     grid-column: 11;
   }
+  
 
   .target-box{
    
@@ -399,6 +395,8 @@ li{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+    top: 199px;
   }
 
   #logo {
@@ -420,19 +418,36 @@ li{
     height: 100%;
   }
   #options {
-    display: none;
     margin:auto;
     width:500px;
     position: relative;
-    top: 723px;
-    left: -2vw;
+    top: 168px;
+    left: 30vw;
   }
   #options2 {
     margin:auto;
     width:500px;
     position: relative;
-    top: 95.5vh;
-    left: -6vw;
+    top: 22vh;
+    left: 49vw;
+  }
+  .subtitles { 
+    font-size: 31px;
+    position: relative;
+    top: 51px;
+    left: 490px;
+  }
+  .titles {
+    font-size: 54px;
+    position: relative;
+    top: 48px;
+    left: 228px;
+  }
+  .titlesCha{
+    position: relative;
+    top: 30px;
+    left: 318px;
+    
   }
 
   .optionBy li button{
@@ -470,10 +485,7 @@ li{
   margin-top: 40%;
 }
 .titlesFeatures {
-  
- 
   width: 30%;
- 
 }
 
 .btnFeatures{

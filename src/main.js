@@ -132,7 +132,7 @@ btnFilm.addEventListener('click',()=>{
     let titleFilm = `<div class='titles'>Peliculas</div>
                     <div class='subtitles'>Studio Ghibli</div>`;
     divRoot.innerHTML=titleFilm;
-    SortFilter.style.display='block';
+    SortFilter.style.display = 'block';
     show(data.films,'poster','description','title');
     btnSort1.innerText='Por titulos';
     btnsort1Asc.innerText = 'A-Z';
@@ -161,7 +161,7 @@ const people=films.map(e=>e.people).flat();
 
 btnsort1Asc.addEventListener('click',()=>{
     divRoot.innerHTML = '';
-    boxSpecies.innerHTML = '';
+    boxSpecies.innerHTML = ''; 
     switch(btnsort1Asc.value)
     {
         case 'titleAsc':
@@ -240,6 +240,7 @@ btnsort2Desc.addEventListener('click',()=>{
 })
 
 /*window.addEventListener("load",()=>{
+    
     options.style.display = 'block';
     btnFilter2.style.display= 'none';
     show(data.films,'poster','description','title');
@@ -268,7 +269,7 @@ let conditionDirector2 = ['director','Isao Takahata'];
 let idFilter = document.getElementById('options2')
 btnCharacter.addEventListener('click',()=>{
     main.style.display='none';
-    SortFilter.style.display = 'grid';
+    SortFilter.style.display = 'block';
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
     let characters=[];
