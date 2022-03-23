@@ -73,8 +73,40 @@ function show(contentGhibli, img, back1, back2) {
         title.textContent = titulo;
         //window.src = 'img/tarjetaS.svg';
         title.classList.add('titleFilm');
-
-        backTarget.innerHTML = titulo + '<br>' + 'score: ' + description;
+        if(back2=='name')
+        {
+            backTarget.innerHTML = `<table>
+                                        <tr><th>${titulo}</th><tr>
+                                        <tr>
+                                            <td>Género:</td>
+                                            <td>${contentGhibli[i].gender}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Años:  </td>
+                                            <td>${contentGhibli[i].age} </td>
+                                        </tr>
+                                        <tr>
+                                        <td> Color de ojos: </td>
+                                        <td> ${contentGhibli[i].eye_color} </td>
+                                    </tr>
+                                    <tr>
+                                    <td>Color de cabello: </td>
+                                    <td> ${contentGhibli[i].hair_color}</td>
+                                </tr>
+                                <tr>
+                                <td>Especie: </td>
+                                <td> ${contentGhibli[i].specie}</td>
+                            </tr>
+                                    </table>
+                                    `
+                                    poster.classList.add('imgCharacters');
+        }
+        else
+        {
+            backTarget.innerHTML = `<div class='titleTarget'>${titulo}</div>` +  `<div class='back1Target'>${back1}: </div>` + description;
+            poster.classList.add('poster');
+        }
+       
 
         targetBox.classList.add('target-box');
 
@@ -82,7 +114,7 @@ function show(contentGhibli, img, back1, back2) {
         window.classList.add('window');
         faceTarget.classList.add('faceTarget');
         backTarget.classList.add('backTarget');
-        poster.classList.add('poster');
+       
 
         document.getElementById('root').appendChild(box);
         box.insertAdjacentElement('beforeend', targetBox);
@@ -123,15 +155,19 @@ const btnsub2Filter2= document.getElementById('sub2BtnFilter2');
 const btnCharacter = document.getElementById('btnCharacter'); 
 const main=document.querySelector('main');
 const SortFilter=document.getElementById('SortFilter');
+
 btnFilm.addEventListener('click',()=>{
 
    main.style.display='none';
     divRoot.innerHTML = '';
-
+    
     boxSpecies.innerHTML = '';
-    let titleFilm = `<div class='titles'>Peliculas</div>
-                    <div class='subtitles'>Studio Ghibli</div>`;
+    let titleFilm = `<img src="img/home.png" alt="home" id="home" class="homeIcon"><h2 class='titles'>Conoce todas las peliculas de Studio Ghibli</h2>`;
     divRoot.innerHTML=titleFilm;
+    divRoot.style.display='flex';
+    divRoot.style.justifyContent ='center';
+    divRoot.style.flexWrap = 'wrap';
+    divRoot.style.display='flex';
     SortFilter.style.display='block';
     show(data.films,'poster','description','title');
     btnSort1.innerText='Por titulos';
@@ -270,10 +306,15 @@ btnCharacter.addEventListener('click',()=>{
     main.style.display='none';
     SortFilter.style.display = 'grid';
     divRoot.innerHTML = '';
+    let titleFilm = `<img src="img/home.png" alt="home" id="home" class="homeIcon"><h2 class='titles'>Conoce a los todos los Personajes de Studio Ghibli</h2>`;
+    divRoot.innerHTML=titleFilm;
+    divRoot.style.display='flex';
+    divRoot.style.justifyContent ='center';
+    divRoot.style.flexWrap = 'wrap';
     boxSpecies.innerHTML = '';
     let characters=[];
     data.films.forEach(e=>characters.push(e.people));
-    show(characters.flat(),'img','name','gender');
+    show(characters.flat(),'img','gender','name');
     btnSort1.innerText='Por nombres';
     btnsort1Asc.innerText = 'A-Z';
     btnsort1Asc.value = 'nameAsc';
@@ -535,8 +576,10 @@ BTN_COMPUTE.addEventListener('click',()=>{
   
     main.style.display='none';
     divRoot.innerHTML = '';
+    divRoot.style.background='#449ed1';
     boxSpecies.innerHTML = '';
     computeContainer.style.display = 'flex';
+    computeContainer.insertAdjacentHTML("afterbegin",`<img src="img/home.png" alt="home" id="home" class="homeIcon">`);
 
     let arr1BtnFeatures = document.getElementsByClassName('btnCompute');
     let arrValues1=[];
@@ -645,3 +688,14 @@ function drawChart() {
   chart.draw(data, options);}
 }
 
+const BTN_HOME = document.getElementById('home');
+const SECOND_PAGE = document.getElementById('secondPage')
+BTN_HOME.addEventListener('click',()=>{
+    main.style.display='grid';
+    divRoot.innerHTML = '';
+    SECOND_PAGE.style.display = 'none';
+    console.log('haciendo click en el boton home')
+    
+}
+    
+)
