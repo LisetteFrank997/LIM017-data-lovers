@@ -1,5 +1,5 @@
 import { it } from 'eslint/lib/rule-tester/rule-tester';
-import {filterData, sortData } from '../src/data.js';
+import {filterData, sortData,computeStats } from '../src/data.js';
 
 
 describe('sortData', () => {
@@ -37,6 +37,66 @@ describe('filterData', () => {
      expect(filterGender2).toEqual(RESULT_GENDER_MALE);
    });
 });
+describe('computeStats', () => {
+  
+  it('debería retornar un objeto con una propiedad y un valor que no se repiten', () => {
+    
+    let computeHairColor= computeStats(HAIR_COLOR);
+    expect(computeHairColor).toEqual( RESULT_COMPUTE);
+  });
+
+});
+
+
+const HAIR_COLOR=["Brown",
+"Black",
+"Peach", 
+"Brown", 
+"White", "None", "Dark brown", "Dark brown", "Light brown", "Reddish brown"
+, "None"
+, "Orange"
+, "Brown"
+, "Dark Brown"
+, "Light Brown"
+, "Dark Brown"
+, "Dark Brown"
+, "Grey"
+, "Brown"
+, "Grey"
+, "Blue"
+, "White"
+, "Brown"
+, "Brown"
+, "Black"
+, "Red"
+, "Brown"
+, "Red"
+, "Black"
+, "Black"
+, "Black"
+, "Black"
+, "Brown"
+, "Black"
+, "Brown"
+, "Black"
+, "Black"]
+const RESULT_COMPUTE={
+  'Black': 9,
+  'Blue': 1,
+  'Brown': 9,
+  'Dark Brown': 3,
+  'Dark brown': 2,
+  'Grey': 2,
+  'Light Brown': 1,
+  'Light brown': 1,
+  'None': 2,
+  'Orange': 1,
+  'Peach': 1,
+  'Red': 2,
+  'Reddish brown': 1,
+  'White': 2
+}
+
 
 const FILMS = [
   {

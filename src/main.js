@@ -5,7 +5,9 @@ const films=data.films;
 let containerSliders=`<div class='containerFilms'>`;
 let i=1;
 
+// eslint-disable-next-line no-unused-vars
 for(const e of films){
+
     if(i==1)
     {
         containerSliders += `<input type='radio' name='slider' id='item-${i}' checked>`;
@@ -52,7 +54,7 @@ function sideScroll(element,direction,speed,distance,step){
 
 
 function show(contentGhibli, img, back1, back2) {
-    
+    console.log(contentGhibli);
     let i = 0;
     const box = document.createElement('section');
     box.classList.add('container');
@@ -133,7 +135,8 @@ function show(contentGhibli, img, back1, back2) {
 
 const divRoot = document.getElementById('root');
 let btnFilm = document.getElementById('btnFilm');
-const options = document.getElementById('options');
+//const options = document.getElementById('options');
+//const options2 = document.getElementById('options2');
 //const btnSort = document.getElementById('btnSort');
 const btnSort1 = document.getElementById('btnSort1');
 const btnsort1Asc = document.getElementById('sub1BtnSort1');
@@ -149,20 +152,20 @@ const btnsub1Filter1 = document.getElementById('sub1BtnFilter1');
 const btnsub2Filter1 = document.getElementById('sub2BtnFilter1');
 const btnsub3Filter1 = document.getElementById('sub3BtnFilter1');
 const btnFilter2 = document.getElementById('btnFilter2');
-const btnsub1Filter2= document.getElementById('sub1BtnFilter2');
-const btnsub2Filter2= document.getElementById('sub2BtnFilter2');
+//const btnsub1Filter2= document.getElementById('sub1BtnFilter2');
+//const btnsub2Filter2= document.getElementById('sub2BtnFilter2');
 
 const btnCharacter = document.getElementById('btnCharacter'); 
 const main=document.querySelector('main');
 const SortFilter=document.getElementById('SortFilter');
-
+let titleFilm = `<img id="home" src="img/home.png" alt="home" class="homeIcon"><h2 class='titles'>Conoce todas las peliculas de Studio Ghibli</h2>`;
 btnFilm.addEventListener('click',()=>{
 
    main.style.display='none';
     divRoot.innerHTML = '';
     
     boxSpecies.innerHTML = '';
-    let titleFilm = `<img src="img/home.png" alt="home" id="home" class="homeIcon"><h2 class='titles'>Conoce todas las peliculas de Studio Ghibli</h2>`;
+  
     divRoot.innerHTML=titleFilm;
     divRoot.style.display='flex';
     divRoot.style.justifyContent ='center';
@@ -191,6 +194,20 @@ btnFilm.addEventListener('click',()=>{
     btnsub2Filter1.value = 'Isao Takahata';
     btnsub3Filter1.style.display = 'none';
     btnFilter2.style.display = 'none';
+
+    let btnHome = document.getElementById('home');
+
+    const SECOND_PAGE = document.getElementById('secondPage')
+    btnHome.addEventListener('click',() =>{
+        
+        main.style.display='grid';
+        divRoot.innerHTML = '';
+        SECOND_PAGE.style.display = 'none';
+  
+        
+    }
+        
+    )
 })
 
 const people=films.map(e=>e.people).flat();
@@ -198,37 +215,45 @@ const people=films.map(e=>e.people).flat();
 btnsort1Asc.addEventListener('click',()=>{
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = ''; 
+    
     switch(btnsort1Asc.value)
     {
         case 'titleAsc':
             {   let ascFilms = sortData(films,'title','asc');
                 
                 show(ascFilms,'poster','description','title');
+                divRoot.insertAdjacentHTML("afterbegin",titleFilm);
                 break;
             }
         case 'nameAsc':
             {
                 let ascNames = sortData(people,'name','asc');
+                
                 show(ascNames,'img','name','specie');
+                divRoot.insertAdjacentHTML("afterbegin",titleCharacter);
                 break;
             }
     }
 })
 btnsort1Desc.addEventListener('click',()=>{
     divRoot.innerHTML = '';
+    
     switch(btnsort1Desc.value)
      {
          case 'titleDesc':
              {   
                  let descFilms = sortData(films,'title','desc');
+                
              show(descFilms,'poster','description','title');
-                 
+            divRoot.insertAdjacentHTML("afterbegin",titleFilm);
                  break;
              }
          case 'nameDesc':
              {
                  let descNames = sortData(people,'name','desc');
-             show(descNames,'img','name','specie');
+                 
+               show(descNames,'img','name','specie');
+                divRoot.insertAdjacentHTML("afterbegin",titleCharacter);
                  break;
              }
      }
@@ -237,12 +262,15 @@ btnsort1Desc.addEventListener('click',()=>{
 btnsort2Desc.addEventListener('click',()=>{
 
     divRoot.innerHTML = '';
+    divRoot.innerHTML=titleFilm;
+    divRoot.insertAdjacentHTML("afterbegin",titleFilm);
     show(sortData(films,'rt_score','desc'),'poster','rt_score','title');
 })
 
 btnsort2Asc.addEventListener('click',()=>{
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
+    divRoot.insertAdjacentHTML("afterbegin",titleFilm);
     show(sortData(films,'rt_score','asc'),'poster','rt_score','title');
 })
 
@@ -250,6 +278,7 @@ btnsort3Asc.addEventListener('click',()=>{
 
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
+    divRoot.insertAdjacentHTML("afterbegin",titleFilm);
     show(sortData(films,'release_date','asc'),'poster','release_date','title');
 })
 
@@ -257,21 +286,18 @@ btnsort3Desc.addEventListener('click',()=>{
 
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
+    divRoot.insertAdjacentHTML("afterbegin",titleFilm);
     show(sortData(films,'release_date','desc'),'poster','release_date','title');
 })
 
 
-btnsort1Desc.addEventListener('click',()=>{
-   divRoot.innerHTML = '';
-   boxSpecies.innerHTML = '';
-   show(sortData(films,'title','desc'),'poster','description','title');
-})
 
 
 btnsort2Desc.addEventListener('click',()=>{
 
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
+    divRoot.insertAdjacentHTML("afterbegin",titleFilm);
     show(sortData(films,'rt_score','desc'),'poster','rt_score','title');
 })
 
@@ -301,14 +327,15 @@ btnsort2Desc.addEventListener('click',()=>{
 let conditionDirector = ['director','Hayao Miyazaki'];
 let conditionDirector2 = ['director','Isao Takahata'];
 
+let titleCharacter = `<img src="img/home.png" alt="home" id="home" class="homeIcon"><h2 class='titles'>Conoce a los todos los Personajes de Studio Ghibli</h2>`;
+let idFilter = document.getElementById('options2');
 
-let idFilter = document.getElementById('options2')
 btnCharacter.addEventListener('click',()=>{
     main.style.display='none';
     SortFilter.style.display = 'block';
     divRoot.innerHTML = '';
-    let titleFilm = `<img src="img/home.png" alt="home" id="home" class="homeIcon"><h2 class='titles'>Conoce a los todos los Personajes de Studio Ghibli</h2>`;
-    divRoot.innerHTML=titleFilm;
+    
+    divRoot.insertAdjacentHTML("afterbegin",titleCharacter);
     divRoot.style.display='flex';
     divRoot.style.justifyContent ='center';
     divRoot.style.flexWrap = 'wrap';
@@ -338,13 +365,26 @@ btnCharacter.addEventListener('click',()=>{
     btnsub1Filter2.innerText= 'Humanos';
     btnsub2Filter2.innerText= 'Otros';**/
     idFilter.style.display='none';
+    let btnHome = document.getElementById('home');
 
+const SECOND_PAGE = document.getElementById('secondPage')
+btnHome.addEventListener('click',() =>{
+    
+    main.style.display='grid';
+    divRoot.innerHTML = '';
+    SECOND_PAGE.style.display = 'none';
+    
+    
+}
+    
+)
 })
 let conditionGender1 = ['gender','Female'];
 let btnFemale = document.getElementById('Female');
 btnFemale.addEventListener('click', ()=>{
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
+    
     let arr= [];
     data.films.forEach(e=>arr.push(e.people));
     show(filterData(arr.flat(),conditionGender1),'img','name','gender');
@@ -354,6 +394,7 @@ btnFemale.addEventListener('click', ()=>{
 btnsub1Filter1.addEventListener('click',()=>{
     divRoot.innerHTML = '';
     boxSpecies.innerHTML = '';
+    divRoot.insertAdjacentHTML("afterbegin",titleFilm);
    show(filterData(data.films,conditionDirector),'poster','title','director');
      
 })
@@ -371,6 +412,7 @@ btnMale.addEventListener('click', ()=>{
 btnsub2Filter1.addEventListener('click', ()=> {
     divRoot.innerHTML ='';
     boxSpecies.innerHTML = '';
+    divRoot.insertAdjacentHTML("afterbegin",titleFilm);
     show(filterData(data.films,conditionDirector2),'poster','title','director');
 })
 
@@ -536,7 +578,7 @@ let btnSpecie = document.getElementById('btnSpecie');
 btnSpecie.addEventListener('click',()=>{
     let arrSpecie=people.map(e=>e.specie);
     let objFeatures=computeStats(arrSpecie);
-    console.log(objFeatures)
+    
     let arrValues=Object.values(objFeatures);
     let arrProperties =Object.keys(objFeatures);
     let arrValuesProperties=[];
@@ -578,9 +620,10 @@ BTN_COMPUTE.addEventListener('click',()=>{
     main.style.display='none';
     divRoot.innerHTML = '';
     divRoot.style.background='#449ed1';
+    //SECOND_PAGE.style.display = 'block'
     boxSpecies.innerHTML = '';
     computeContainer.style.display = 'flex';
-    computeContainer.insertAdjacentHTML("afterbegin",`<img src="img/home.png" alt="home" id="home" class="homeIcon">`);
+    computeContainer.insertAdjacentHTML("afterbegin",`<img id="home" src="img/home.png" alt="home"  class="homeCompute">`);
 
     let arr1BtnFeatures = document.getElementsByClassName('btnCompute');
     let arrValues1=[];
@@ -599,13 +642,27 @@ BTN_COMPUTE.addEventListener('click',()=>{
             arrValues2.push(arr2BtnFeatures[i].value);
         })
     }
-   
+    let btnHome = document.getElementById('home');
+
+    const SECOND_PAGE = document.getElementById('secondPage')
+    btnHome.addEventListener('click',() =>{
+        
+        main.style.display='grid';
+        divRoot.innerHTML = '';
+        SECOND_PAGE.style.display = 'none';
+  
+        
+    }
+        
+    )
 })
 
 let btnHairColor = document.getElementById('btnHair');
 btnHairColor.addEventListener('click', ()=>{
-    let arrHairColor=people.map(e=>e.hair_color);
+let arrHairColor=people.map(e=>e.hair_color);
+console.log(arrHairColor);
 let objFeatures=computeStats(arrHairColor);
+
 let arrValues=Object.values(objFeatures);
 let arrProperties =Object.keys(objFeatures);
 let arrValuesProperties=[];
@@ -689,14 +746,4 @@ function drawChart() {
   chart.draw(data, options);}
 }
 
-const BTN_HOME = document.getElementById('home');
-const SECOND_PAGE = document.getElementById('secondPage')
-BTN_HOME.addEventListener('click',()=>{
-    main.style.display='grid';
-    divRoot.innerHTML = '';
-    SECOND_PAGE.style.display = 'none';
-    console.log('haciendo click en el boton home')
-    
-}
-    
-)
+
